@@ -41,7 +41,7 @@ const languageTitles: any = {
 const RegionalNewsGrid = () => (
   <section id="regional" className="max-w-screen-2xl mx-auto px-4 py-6">
     <h2 className="text-xl md:text-2xl font-bold mb-6 text-indigo-700">Regional News</h2>
-    <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
       {regionalNews.map((region, idx) => {
         if (idx === 0) {
           const featuredStory = region.stories[0];
@@ -62,15 +62,21 @@ const RegionalNewsGrid = () => (
             </div>
           );
         }
+        
+        const topStory = region.stories[0];
+        const otherStories = region.stories.slice(1);
         return (
           <div key={region.language} className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
                <span className="text-lg font-bold uppercase tracking-wider text-indigo-700">{languageTitles[region.language]} NEWS</span>
             </div>
-            <div className="flex flex-col gap-6">
-              {region.stories.map((story, i) => (
-                <NewsCard key={i} {...story} language={region.language as any} />
-              ))}
+            <div className="flex flex-col gap-4">
+              <NewsCard {...topStory} language={region.language as any} />
+              <div className="flex flex-col gap-2 mt-2">
+                {otherStories.map((story, i) => (
+                  <SmallNewsCard key={i} {...story} language={region.language as any} />
+                ))}
+              </div>
             </div>
           </div>
         );
