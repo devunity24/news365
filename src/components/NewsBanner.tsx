@@ -4,7 +4,11 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "./ui/carousel";
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel"; // Assuming carousel is in ui, adjust if needed
+import { Card, CardContent } from "./ui/card"; // Assuming card is in ui
+import Autoplay from "embla-carousel-autoplay";
 
 const bannerSlides = [
   {
@@ -12,111 +16,70 @@ const bannerSlides = [
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
     alt: "Indian city skyline at sunset",
     headline: "Voters turn out in record numbers for 2024 National Elections in South India",
+    category: "National Elections",
   },
   {
     image:
       "https://images.unsplash.com/photo-1524492449090-1a064badb801?auto=format&fit=crop&w=1200&q=80",
     alt: "Voters standing in line during Indian election",
-    headline: "Polling stations see long queues as democracy thrives",
+    headline: "Polling stations see long queues as democracy thrives across the regions",
+    category: "Regional Updates",
   },
   {
     image:
       "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80",
     alt: "Journalists at work in newsroom",
-    headline: "Media teams provide minute-to-minute updates across languages",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=1200&q=80",
-    alt: "Microphones lined up for a press conference",
-    headline: "Political leaders address the public on new reforms",
+    headline: "Media teams provide minute-to-minute updates across all major languages",
+    category: "Media Coverage",
   },
 ];
 
-const AUTOPLAY_INTERVAL = 4000;
-
 const NewsBanner: React.FC = () => {
-  const [activeIndex, setActiveIndex] = React.useState(0);
-  const slideCount = bannerSlides.length;
-  const timer = React.useRef<NodeJS.Timeout | null>(null);
-
-  React.useEffect(() => {
-    timer.current = setTimeout(() => {
-      setActiveIndex((prev) => (prev + 1) % slideCount);
-    }, AUTOPLAY_INTERVAL);
-    return () => timer.current && clearTimeout(timer.current);
-  }, [activeIndex, slideCount]);
+  const plugin = React.useRef(
+    Autoplay({ delay: 5000, stopOnInteraction: true })
+  );
 
   return (
-    <section
-      className="relative w-full rounded-xl mt-2 overflow-hidden shadow-card"
-      style={{
-        minHeight: "320px",
-        maxHeight: "480px",
-        height: "36vw",
-      }}
-    >
+    <section className="py-4 md:py-6 px-4 md:px-8 max-w-screen-2xl mx-auto">
       <Carousel
-        opts={{ loop: true }}
-        className="h-full"
+        plugins={[plugin.current]}
+        className="w-full rounded-xl overflow-hidden shadow-lg"
+        onMouseEnter={plugin.current.stop}
+        onMouseLeave={plugin.current.reset}
+        opts={{
+          loop: true,
+        }}
       >
-        <CarouselContent
-          className="h-full"
-          style={{ height: "100%" }}
-        >
-          {bannerSlides.map((slide, idx) => (
-            <CarouselItem
-              key={slide.image}
-              className={`relative h-full transition-all duration-1000 ${
-                idx === activeIndex ? "opacity-100 z-10" : "opacity-0 pointer-events-none z-0"
-              }`}
-              aria-hidden={idx !== activeIndex}
-            >
-              {/* Image as background */}
-              <img
-                src={slide.image}
-                alt={slide.alt}
-                className="absolute inset-0 w-full h-full object-cover opacity-80 transition-opacity duration-700"
-                loading="lazy"
-              />
-              {/* Gradient overlays */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 opacity-75"></div>
-              {/* Slide Content */}
-              <div className="relative z-20 flex flex-col justify-end h-full px-4 py-8 md:py-14 md:px-12">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="bg-yellow-400 text-xs font-bold px-3 py-1 rounded uppercase text-black animate-pulse drop-shadow">
-                    Breaking
-                  </div>
-                  <span className="text-white text-base md:text-2xl font-semibold tracking-wide drop-shadow animate-fade-in">
-                    {slide.headline}
+        <CarouselContent className="-ml-1 h-[300px] md:h-[400px] lg:h-[450px]">
+          {bannerSlides.map((slide, index) => (
+            <CarouselItem key={index} className="pl-1 basis-full">
+              <div className="relative h-full w-full">
+                <img
+                  src={slide.image}
+                  alt={slide.alt}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+                <div className="absolute bottom-0 left-0 p-4 md:p-8 text-white">
+                  <span className="bg-red-600 text-xs font-semibold px-2 py-1 rounded-sm uppercase mb-2 inline-block">
+                    Breaking News
                   </span>
-                </div>
-                <div className="mt-3">
-                  <a
-                    href="#top-news"
-                    className="bg-white/90 hover:bg-white text-red-700 font-bold py-2 px-4 rounded shadow transition-all inline-block text-xs md:text-sm"
-                  >
-                    See Top News &rarr;
-                  </a>
+                  <h2 className="text-xl md:text-3xl lg:text-4xl font-bold leading-tight drop-shadow-md">
+                    {slide.headline}
+                  </h2>
+                  {slide.category && (
+                    <p className="text-sm md:text-base text-gray-200 mt-1">
+                      Category: {slide.category}
+                    </p>
+                  )}
                 </div>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-        {/* Bullet indicators */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-30">
-          {bannerSlides.map((_, idx) => (
-            <button
-              key={idx}
-              type="button"
-              className={`w-3 h-3 rounded-full border border-white ${
-                idx === activeIndex ? "bg-white" : "bg-gray-400/50"
-              } transition-all`}
-              aria-label={`Go to banner slide ${idx + 1}`}
-              tabIndex={0}
-              onClick={() => setActiveIndex(idx)}
-            ></button>
-          ))}
+        <div className="hidden sm:block">
+          <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800" />
+          <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800" />
         </div>
       </Carousel>
     </section>

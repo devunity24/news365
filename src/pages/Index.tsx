@@ -2,20 +2,21 @@
 // Rashtrashabdam News Portal Homepage Layout
 
 import TopBar from "../components/TopBar";
-import MainNavigation from "../components/MainNavigation"; // Added import
+import MainNavigation from "../components/MainNavigation";
+import NewsBanner from "../components/NewsBanner"; // Added import
 import HeroCarousel from "../components/HeroCarousel";
 import RegionalNewsGrid from "../components/RegionalNewsGrid";
 import VideoCarousel from "../components/VideoCarousel";
 import OpinionColumns from "../components/OpinionColumns";
 import Footer from "../components/Footer";
-import NewsBanner from "../components/NewsBanner";
+
 
 const Index = () => {
   return (
     <main className="bg-white min-h-screen font-sans">
       <TopBar />
-      <MainNavigation /> {/* Added MainNavigation component */}
-      <NewsBanner />
+      <MainNavigation />
+      <NewsBanner /> {/* Added NewsBanner component */}
       <HeroCarousel />
       <RegionalNewsGrid />
       <VideoCarousel />
