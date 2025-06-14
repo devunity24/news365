@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   NavigationMenu,
@@ -10,7 +9,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
-import { Home, Newspaper, Video, Users, BookOpen, Globe, ChevronDown } from 'lucide-react';
+import { Home, Newspaper, Video, Users, BookOpen, Globe } from 'lucide-react';
 
 const mainCategories = [
   { title: "National", href: "/category/national", description: "Latest news from across the nation." },
@@ -57,7 +56,7 @@ ListItem.displayName = "ListItem";
 
 const MainNavigation = () => {
   return (
-    <div className="bg-gray-50 border-b border-gray-200 shadow-sm">
+    <div className="bg-gray-50 border-b border-gray-200 shadow-sm relative z-30">
       <NavigationMenu className="max-w-screen-2xl mx-auto py-2 px-4 md:px-8">
         <NavigationMenuList className="flex flex-wrap justify-center md:justify-start gap-1">
           <NavigationMenuItem>
