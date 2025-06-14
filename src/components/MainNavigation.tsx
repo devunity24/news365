@@ -125,6 +125,12 @@ const MainNavigation = () => {
           </NavigationMenuItem>
 
         </NavigationMenuList>
+        <a
+          href="/join-us"
+          className="ml-2 px-4 py-2 bg-red-600 text-white font-bold rounded shadow hover:bg-red-700 transition-colors"
+        >
+          JOIN US
+        </a>
       </NavigationMenu>
     </div>
   );
