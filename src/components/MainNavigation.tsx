@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {
   NavigationMenu,
@@ -38,13 +39,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-800 hover:text-white focus:bg-gray-800 focus:text-white",
             className
           )}
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <p className="line-clamp-2 text-sm leading-snug text-gray-400">
             {children}
           </p>
         </a>
@@ -55,21 +56,24 @@ const ListItem = React.forwardRef<
 ListItem.displayName = "ListItem";
 
 const MainNavigation = () => {
+  const navItemClasses = "bg-transparent text-gray-200 hover:bg-gray-800 hover:text-white focus:bg-gray-800 focus:text-white";
+  const contentClasses = "bg-black border-gray-800 text-gray-200";
+
   return (
-    <div className="bg-gray-50 border-b border-gray-200 shadow-sm relative z-30">
+    <div className="bg-black border-b border-gray-800 shadow-sm relative z-30">
       <NavigationMenu className="max-w-screen-2xl mx-auto py-2 px-4 md:px-8">
         <NavigationMenuList className="flex flex-wrap justify-center md:justify-start gap-1">
           <NavigationMenuItem>
-            <NavigationMenuLink href="/" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
+            <NavigationMenuLink href="/" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2", navItemClasses, "data-[active]:bg-gray-800")}>
               <Home size={18} /> Home
             </NavigationMenuLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="flex items-center gap-2">
+            <NavigationMenuTrigger className={cn("flex items-center gap-2", navItemClasses, "data-[state=open]:bg-gray-800")}>
               <Newspaper size={18} /> Categories
             </NavigationMenuTrigger>
-            <NavigationMenuContent>
+            <NavigationMenuContent className={contentClasses}>
               <ul className="grid w-[200px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 {mainCategories.map((category) => (
                   <ListItem
@@ -85,10 +89,10 @@ const MainNavigation = () => {
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="flex items-center gap-2">
+            <NavigationMenuTrigger className={cn("flex items-center gap-2", navItemClasses, "data-[state=open]:bg-gray-800")}>
               <Globe size={18} /> Regional News
             </NavigationMenuTrigger>
-            <NavigationMenuContent>
+            <NavigationMenuContent className={contentClasses}>
               <ul className="grid w-[200px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                 {regionalLanguages.map((language) => (
                   <ListItem
@@ -104,19 +108,19 @@ const MainNavigation = () => {
           </NavigationMenuItem>
           
           <NavigationMenuItem>
-            <NavigationMenuLink href="/opinion" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
+            <NavigationMenuLink href="/opinion" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2", navItemClasses, "data-[active]:bg-gray-800")}>
               <BookOpen size={18} /> Opinion
             </NavigationMenuLink>
           </NavigationMenuItem>
 
           <NavigationMenuItem>
-            <NavigationMenuLink href="/videos" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
+            <NavigationMenuLink href="/videos" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2", navItemClasses, "data-[active]:bg-gray-800")}>
               <Video size={18} /> Videos
             </NavigationMenuLink>
           </NavigationMenuItem>
           
           <NavigationMenuItem>
-            <NavigationMenuLink href="/about-us" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2")}>
+            <NavigationMenuLink href="/about-us" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2", navItemClasses, "data-[active]:bg-gray-800")}>
               <Users size={18} /> About Us
             </NavigationMenuLink>
           </NavigationMenuItem>
