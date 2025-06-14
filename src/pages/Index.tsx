@@ -1,6 +1,8 @@
+
 // Rashtrashabdam News Portal Homepage Layout
 
 import TopBar from "../components/TopBar";
+import MainNavigation from "../components/MainNavigation"; // Added import
 import HeroCarousel from "../components/HeroCarousel";
 import RegionalNewsGrid from "../components/RegionalNewsGrid";
 import VideoCarousel from "../components/VideoCarousel";
@@ -12,6 +14,7 @@ const Index = () => {
   return (
     <main className="bg-white min-h-screen font-sans">
       <TopBar />
+      <MainNavigation /> {/* Added MainNavigation component */}
       <NewsBanner />
       <HeroCarousel />
       <RegionalNewsGrid />
