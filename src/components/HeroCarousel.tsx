@@ -3,7 +3,7 @@ import NewsCard from "./NewsCard";
 
 const topStories = [
   {
-    image: "https://www.rashtrashabdam.com/wp-content/uploads/2024/06/kerala-floods-thumb.jpg",
+    image: "../images/banner1.avif",
     category: "Malayalam",
     headline: "Kerala Floods: Relief & Rescue Operations Continue",
     language: "malayalam" as const,

@@ -14,20 +14,20 @@ import { Play } from 'lucide-react';
 const bannerSlides = [
   {
     image:
-      "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=1200&q=80",
+      "../images/banner1.avif",
     alt: "Colorful software or web code on a computer monitor",
-    headline: "Green Mining Technologies Transform Industry Standards",
-    subheadline: "AI and automation are reducing environmental impact while increasing efficiency.",
-    category: "Technology",
+    headline: "ടാറ്റാ ഐപിഎൽ 2025 ഫൈനൽ, ആർസിബി vs പഞ്ചാബ് കിംഗ്സ് – മത്സ്യ റിപ്പോർട്ട്",
+    subheadline: "03 Jun, 2025",
+    category: "Sports",
     readTime: "6 min read",
   },
   {
     image:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+      "../images/banner2.avif",
     alt: "Macro photography of black circuit board",
-    headline: "Voters turn out in record numbers for 2024 National Elections",
-    subheadline: "Polling stations see long queues as democracy thrives across the regions.",
-    category: "National Elections",
+    headline: "ടാറ്റാ ഐപിഎൽ 2025, എലിമിനേറ്റർ, ഗുജറാത്ത് ടൈറ്റൻസ് vs മുംബൈ ഇൻഡ്യൻസ് – മത്സര റിപ്പോർട്ട്",
+    subheadline: "03 Jun, 2025",
+    category: "Sports",
     readTime: "4 min read",
   },
   {
@@ -57,7 +57,7 @@ const NewsBanner: React.FC = () => {
           loop: true,
         }}
       >
-        <CarouselContent className="ml-0 h-[250px] md:h-[300px] lg:h-[350px]">
+        <CarouselContent className="ml-0 h-[300px] md:h-[350px] lg:h-[400px]">
           {bannerSlides.map((slide, index) => (
             <CarouselItem key={index} className="pl-0 basis-full">
               <div className="relative h-full w-full">
