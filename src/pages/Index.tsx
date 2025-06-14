@@ -17,8 +17,8 @@ const Index = () => {
     <main className="bg-white min-h-screen font-sans">
       <TopBar />
       <MainNavigation />
-      <NewsBanner />
       <InfoBar />
+      <NewsBanner />
       <HeroCarousel />
       <RegionalNewsGrid />
       <VideoCarousel />
