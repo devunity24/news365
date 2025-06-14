@@ -15,11 +15,11 @@ const InfoBar = () => {
 
       {/* Blue Bar */}
       <div className="bg-sky-600 text-white">
-        <div className="max-w-screen-2xl mx-auto flex justify-between items-center py-3 px-4 md:px-8">
-          <p className="font-serif italic text-base md:text-lg hidden sm:block">
+        <div className="max-w-screen-2xl mx-auto flex justify-center items-center py-3 px-4 md:px-8 relative">
+          <p className="font-serif text-base md:text-lg hidden sm:block">
             Rashtrashabdam News "Truth, Unbiased, Unbeaten"
           </p>
-          <div className="flex items-center gap-4 mx-auto sm:mx-0">
+          <div className="flex items-center gap-4 sm:absolute sm:right-4 md:right-8">
             <a href="#" aria-label="Facebook" className="hover:text-gray-200 transition-colors">
               <Facebook size={20} />
             </a>
