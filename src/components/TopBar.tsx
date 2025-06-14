@@ -11,10 +11,9 @@ const TopBar = () => {
       <nav className="max-w-screen-2xl mx-auto flex items-center justify-between gap-4 md:gap-6 py-3 px-4 md:px-8">
         {/* Left Section: Logo and Brand Name */}
         <div className="flex items-center gap-3 md:gap-4">
-          <img src="https://www.rashtrashabdam.com/wp-content/uploads/2020/09/rashdralogo.png"
+          <img src="../images/logo.png"
                alt="Rashtrashabdam Logo"
                className="h-10 md:h-12 w-auto" />
-          <span className="text-xl md:text-2xl font-extrabold text-red-600 tracking-tight hidden sm:block">Rashtrashabdam</span>
         </div>
 
         {/* Right Section: Date, Social Icons, Search */}
