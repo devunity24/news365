@@ -7,11 +7,11 @@ type NewsCardProps = {
 };
 
 const NewsCard = ({ image, category, headline, language }: NewsCardProps) => (
-  <article className="bg-white rounded-xl shadow-card overflow-hidden card-hover w-full max-w-xs mx-auto">
+  <article className="bg-white rounded-xl shadow-card overflow-hidden card-hover w-full cursor-pointer">
     <img src={image} alt={headline} className="object-cover w-full h-40" loading="lazy" />
     <div className="p-4">
       <span className={`language-badge ${language}`}>{category}</span>
-      <h3 className="text-lg font-bold mt-2">{headline}</h3>
+      <h3 className="text-base font-bold mt-2 leading-snug">{headline}</h3>
     </div>
   </article>
 );
