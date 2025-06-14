@@ -9,8 +9,8 @@ const InfoBar = () => {
           <p className="font-serif text-base md:text-lg">
             "Truth, Unbiased, Unbeaten"
           </p>
-          <p className="font-medium text-xs md:text-sm text-gray-300 hidden sm:block">
-            South India's Integrated Digital News Platform
+          <p className="font-medium text-xs md:text-sm text-gray-300">
+            South India's Integrated Digital News Platform. Read your day to day news in Malayalam, Tamil, Telugu, Kannada.
           </p>
         </div>
         <div className="flex items-center gap-4">
