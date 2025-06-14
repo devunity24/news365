@@ -57,7 +57,7 @@ const NewsBanner: React.FC = () => {
           loop: true,
         }}
       >
-        <CarouselContent className="ml-0 h-[300px] md:h-[400px] lg:h-[450px]">
+        <CarouselContent className="ml-0 h-[250px] md:h-[300px] lg:h-[350px]">
           {bannerSlides.map((slide, index) => (
             <CarouselItem key={index} className="pl-0 basis-full">
               <div className="relative h-full w-full">
@@ -73,7 +73,7 @@ const NewsBanner: React.FC = () => {
                       {slide.category}
                     </span>
                   )}
-                  <h2 className="text-2xl md:text-3xl lg:text-5xl font-bold leading-tight drop-shadow-md max-w-3xl">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight drop-shadow-md max-w-3xl">
                     {slide.headline}
                   </h2>
                   {slide.subheadline && (
