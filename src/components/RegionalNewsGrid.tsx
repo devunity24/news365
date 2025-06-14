@@ -65,7 +65,10 @@ const regionalNews = [
   {
     language: "kannada",
     stories: [
-      { image: "https://www.rashtrashabdam.com/wp-content/uploads/2024/06/mysore-palace-thumb.jpg", category: "Kannada", headline: "Mysore Palace Light Show Draws Crowds", publishedAt: "2024-06-10" },
+      { image: "../images/kannada_news_1.jpg", 
+        category: "Kannada", 
+        headline: "ಮೈಸೂರು ಅರಮನೆ ಬೆಳಕು ಪ್ರದರ್ಶನ ಜನರ ಗಮನ ಸೆಳೆಯಿತು", 
+        publishedAt: "2024-06-10" },
       { image: "https://www.rashtrashabdam.com/wp-content/uploads/2024/06/udipi-sea-thumb.jpg", category: "Kannada", headline: "Udupi Marine Drive Grand Opening", publishedAt: "2024-06-09" },
       { image: "https://www.rashtrashabdam.com/wp-content/uploads/2024/06/bangalore-water-thumb.jpg", category: "Kannada", headline: "Bengaluru Water Conservation Drive", publishedAt: "2024-06-08" },
     ],
@@ -73,7 +76,10 @@ const regionalNews = [
   {
     language: "tamil",
     stories: [
-      { image: "https://www.rashtrashabdam.com/wp-content/uploads/2024/06/madurai-temple-thumb.jpg", category: "Tamil", headline: "Madurai’s Ancient Temple Restoration Complete", publishedAt: "2024-06-10" },
+      { image: "../images/tamil_news_1.jpg", 
+        category: "Tamil", 
+        headline: "மதுரையின் பழமையான கோவில் புதுப்பிப்பு வேலை முடிவடைந்தது", 
+        publishedAt: "2024-06-10" },
       { image: "https://www.rashtrashabdam.com/wp-content/uploads/2024/06/pondy-monsoon-thumb.jpg", category: "Tamil", headline: "Pondicherry Braces for Monsoon Showers", publishedAt: "2024-06-09" },
       { image: "https://www.rashtrashabdam.com/wp-content/uploads/2024/06/trichy-sports-thumb.jpg", category: "Tamil", headline: "Trichy Hosts National Youth Games", publishedAt: "2024-06-08" },
     ],
@@ -89,7 +95,7 @@ const languageTitles: any = {
 };
 
 const RegionalNewsGrid = () => (
-  <section id="regional" className="max-w-screen-2xl mx-auto px-4 py-6">
+  <section id="regional" className="max-w-screen-2xl mx-auto px-4 py-0">
     <h2 className="text-xl md:text-2xl font-bold mb-6 text-indigo-700">Regional News</h2>
     <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
       {regionalNews.map((region, idx) => {
