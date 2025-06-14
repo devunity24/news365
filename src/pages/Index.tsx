@@ -19,8 +19,8 @@ const Index = () => {
       <TopBar />
       <MainNavigation />
       <InfoBar />
-      <BreakingNewsTicker />
       <NewsBanner />
+      <BreakingNewsTicker />
       <HeroCarousel />
       <RegionalNewsGrid />
       <VideoCarousel />
