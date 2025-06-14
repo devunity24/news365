@@ -56,10 +56,10 @@ ListItem.displayName = "ListItem";
 
 const MainNavigation = () => {
   const navItemClasses = "bg-transparent text-gray-200 hover:bg-gray-800 hover:text-white focus:bg-gray-800 focus:text-white";
-  const contentClasses = "bg-gray-900 border-gray-800 text-gray-200";
+  const contentClasses = "bg-charcoal-500 border-gray-800 text-gray-200";
 
   return (
-    <div className="bg-gray-900 border-b border-gray-800 shadow-sm relative z-30">
+    <div className="bg-charcoal-500 border-b border-gray-800 shadow-sm relative z-30">
       <NavigationMenu className="max-w-screen-2xl mx-auto py-2 px-4 md:px-8">
         <NavigationMenuList className="flex flex-wrap justify-center md:justify-start gap-1">
           <NavigationMenuItem>

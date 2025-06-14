@@ -23,6 +23,9 @@ export default {
     },
     extend: {
       colors: {
+        charcoal: {
+          500: "#36454F",
+        },
         red: {
           600: "#E53935",
         },
