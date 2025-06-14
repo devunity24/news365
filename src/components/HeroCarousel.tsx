@@ -4,26 +4,30 @@ const topStories = [
   {
     image: "../images/banner1.avif",
     category: "Malayalam",
-    headline: "ടാറ്റാ ഐപിഎൽ 2025 ഫൈനൽ, ആർസിബി vs പഞ്ചാബ് കിംഗ്സ് – മത്സ്യ റിപ്പോർട്ട്",
+    headline: "ടാറ്റാ ഐപിഎൽ 2025 ഫൈനൽ, ആർസിബി vs പഞ്ചാബ് കിംഗ്സ് ",
     language: "malayalam" as const,
+    publishedAt: "2024-06-10",
   },
   {
     image: "../images/top_news_1.jpg",
     category: "Kannada",
     headline: "ಬೆಂಗಳೂರು ಮೆಟ್ರೋ ಐಟಿ ಹಬ್‌ಗಳನ್ನು ಸಂಪರ್ಕಿಸುವ ಹೊಸ ಮಾರ್ಗವನ್ನು ಆರಂಭಿಸಿದೆ",
     language: "kannada" as const,
+    publishedAt: "2024-06-09",
   },
   {
     image: "../images/top_news_2.jpg",
     category: "Tamil",
     headline: "வெப்ப அலை காரணமாக சென்னையில் கடும் நீர் பஞ்சம்",
     language: "tamil" as const,
+    publishedAt: "2024-06-08",
   },
   {
     image: "../images/top_news_3.jpg",
-    category: "Telegu",
+    category: "Telugu",
     headline: "Kavitha: కేసీఆర్‌తో మాట్లాడానో.. లేదన్నది ఇప్పుడు అనవసరం",
-    language: "telegu" as const,
+    language: "telugu" as const,
+    publishedAt: "2024-06-07",
   },
 ];
 
