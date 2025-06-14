@@ -47,19 +47,19 @@ const NewsBanner: React.FC = () => {
   );
 
   return (
-    <section className="py-4 md:py-6 px-4 md:px-8 max-w-screen-2xl mx-auto">
+    <section>
       <Carousel
         plugins={[plugin.current]}
-        className="w-full rounded-xl overflow-hidden shadow-lg"
+        className="w-full overflow-hidden"
         onMouseEnter={plugin.current.stop}
         onMouseLeave={plugin.current.reset}
         opts={{
           loop: true,
         }}
       >
-        <CarouselContent className="-ml-1 h-[300px] md:h-[400px] lg:h-[450px]">
+        <CarouselContent className="ml-0 h-[300px] md:h-[400px] lg:h-[450px]">
           {bannerSlides.map((slide, index) => (
-            <CarouselItem key={index} className="pl-1 basis-full">
+            <CarouselItem key={index} className="pl-0 basis-full">
               <div className="relative h-full w-full">
                 <img
                   src={slide.image}
