@@ -4,6 +4,7 @@
 import TopBar from "../components/TopBar";
 import MainNavigation from "../components/MainNavigation";
 import NewsBanner from "../components/NewsBanner"; // Added import
+import InfoBar from "../components/InfoBar";
 import HeroCarousel from "../components/HeroCarousel";
 import RegionalNewsGrid from "../components/RegionalNewsGrid";
 import VideoCarousel from "../components/VideoCarousel";
@@ -16,7 +17,8 @@ const Index = () => {
     <main className="bg-white min-h-screen font-sans">
       <TopBar />
       <MainNavigation />
-      <NewsBanner /> {/* Added NewsBanner component */}
+      <NewsBanner />
+      <InfoBar />
       <HeroCarousel />
       <RegionalNewsGrid />
       <VideoCarousel />
