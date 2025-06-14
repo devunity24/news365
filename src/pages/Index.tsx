@@ -5,6 +5,7 @@ import TopBar from "../components/TopBar";
 import MainNavigation from "../components/MainNavigation";
 import NewsBanner from "../components/NewsBanner"; // Added import
 import InfoBar from "../components/InfoBar";
+import BreakingNewsTicker from "../components/BreakingNewsTicker";
 import HeroCarousel from "../components/HeroCarousel";
 import RegionalNewsGrid from "../components/RegionalNewsGrid";
 import VideoCarousel from "../components/VideoCarousel";
@@ -18,6 +19,7 @@ const Index = () => {
       <TopBar />
       <MainNavigation />
       <InfoBar />
+      <BreakingNewsTicker />
       <NewsBanner />
       <HeroCarousel />
       <RegionalNewsGrid />
