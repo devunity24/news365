@@ -32,12 +32,12 @@ const bannerSlides = [
   },
   {
     image:
-      "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80",
+      "../images/banner3.jpeg",
     alt: "Journalists at work in newsroom",
-    headline: "Media teams provide minute-to-minute updates",
-    subheadline: "In-depth analysis and live reporting from the heart of the action.",
-    category: "Media Coverage",
-    readTime: "8 min read",
+    headline: "",
+    subheadline: "",
+    category: "",
+    readTime: "",
   },
 ];
 
@@ -64,7 +64,7 @@ const NewsBanner: React.FC = () => {
                 <img
                   src={slide.image}
                   alt={slide.alt}
-                  className="h-full w-full object-cover"
+                  className={`h-full w-full ${index === bannerSlides.length - 1 ? '' : ' object-cover'}`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 p-6 md:p-10 text-white">
@@ -81,14 +81,7 @@ const NewsBanner: React.FC = () => {
                       {slide.subheadline}
                     </p>
                   )}
-                  <div className="flex items-center gap-4 mt-6">
-                    <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white rounded-md font-bold text-sm px-5 py-3">
-                      <a href="#"><Play className="mr-2 h-4 w-4 inline-block" />Read Full Story</a>
-                    </Button>
-                    {slide.readTime && (
-                      <p className="text-sm font-medium">{slide.readTime}</p>
-                    )}
-                  </div>
+
                 </div>
               </div>
             </CarouselItem>

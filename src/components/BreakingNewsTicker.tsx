@@ -1,24 +1,23 @@
-
 import React from 'react';
 import { TrendingUp } from 'lucide-react';
 
 const breakingNews = [
-  "New heights in renewable energy sector",
-  "Lithium mining operations expand in South America",
-  "Iron ore futures climb on Chinese infrastructure spending",
-  "Nickel shortage concerns drive price volatility",
-  "Silver industrial demand outpaces supply",
+  "പുതിയ ഉയരങ്ങളിൽ പുനർനവീകരണ ഊർജ്ജ മേഖല",
+  "ദക്ഷിണ അമേരിക്കയിൽ ലിഥിയം ഖനനം വ്യാപകമാകുന്നു",
+  "ചൈനീസ് അടിസ്ഥാന സൗകര്യ ചെലവിൽ ഇരുമ്പ് ധാതു വില ഉയരുന്നു",
+  "നിക്കൽ കുറവ് വിലയിലുണ്ടാക്കുന്ന അനിശ്ചിതത്വം",
+  "വെള്ളി വ്യാവസായിക ആവശ്യങ്ങൾ വിതരണം മറികടക്കുന്നു",
 ];
 
 const BreakingNewsTicker: React.FC = () => {
   return (
-    <div className="bg-red-600 text-white flex items-center h-12 overflow-hidden">
-      <div className="bg-red-700 h-full flex items-center px-4 md:px-6 flex-shrink-0">
+    <div className="bg-red-600 text-white flex items-center h-12 overflow-hidden relative">
+      <div className="bg-red-700 h-full flex items-center px-4 md:px-6 flex-shrink-0 absolute left-0 top-0 w-32">
         <TrendingUp className="w-5 h-5 mr-2" />
         <span className="font-bold text-sm uppercase tracking-wider">Breaking</span>
       </div>
       <div className="flex-1 flex items-center min-w-0">
-        <div className="flex whitespace-nowrap animate-marquee">
+        <div className="flex whitespace-nowrap animate-marquee ml-32">
             {breakingNews.map((news, index) => (
               <a href="#" key={index} className="text-sm px-6 py-3 hover:underline">
                 {news}
