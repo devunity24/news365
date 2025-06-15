@@ -22,7 +22,7 @@ const SmallNewsCard = ({ image, headline, publishedAt }: SmallNewsCardProps) => 
       )}
     </div>
     <div className="flex-grow flex items-center">
-      <h3 className="text-sm font-semibold leading-snug">{headline}</h3>
+      <h3 className="text-sm font-semibold leading-snug group-hover:text-blue-700 transition-colors">{headline}</h3>
     </div>
   </article>
 );

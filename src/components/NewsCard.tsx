@@ -16,13 +16,13 @@ const NewsCard = ({ image, category, headline, language }: NewsCardProps) => {
 
   return (
     <article
-      className="bg-white rounded-xl shadow-card overflow-hidden card-hover w-full cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
+      className="bg-white rounded-xl shadow-card overflow-hidden card-hover w-full cursor-pointer transition-transform duration-200 hover:scale-[1.02] group"
       onClick={handleClick}
     >
       <img src={image} alt={headline} className="object-cover w-full h-40" loading="lazy" />
       <div className="p-4">
         <span className={`language-badge ${language}`}>{category}</span>
-        <h3 className="text-base font-bold mt-2 leading-snug">{headline}</h3>
+        <h3 className="text-base font-bold mt-2 leading-snug group-hover:text-blue-700 transition-colors">{headline}</h3>
       </div>
     </article>
   );
