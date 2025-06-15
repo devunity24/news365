@@ -18,11 +18,7 @@ const BreakingNewsTicker: React.FC = () => {
       </div>
       <div className="flex-1 flex items-center min-w-0">
         <div className="flex whitespace-nowrap animate-marquee">
-            {breakingNews.map((news, index) => (
-              <a href="#" key={index} className="text-xs px-4 py-2 hover:underline">
-                {news}
-              </a>
-            ))}
+          
             {breakingNews.map((news, index) => (
               <a href="#" key={`dup-${index}`} className="text-sm px-6 py-3 hover:underline" aria-hidden="true">
                 {news}
