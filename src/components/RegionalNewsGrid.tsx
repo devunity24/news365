@@ -1,6 +1,7 @@
 import NewsCard from "./NewsCard";
 import FeaturedNewsCard from "./FeaturedNewsCard";
 import SmallNewsCard from "./SmallNewsCard";
+import TeluguNewsGrid from "./TeluguNewsGrid";
 
 const regionalNews = [
 	{
@@ -113,15 +114,33 @@ const regionalNews = [
 				publishedAt: "2024-06-10",
 			},
 			{
-				image: "https://www.rashtrashabdam.com/wp-content/uploads/2024/06/pondy-monsoon-thumb.jpg",
+				image: "../images/tamil_news_2.jpg",
 				category: "Tamil",
-				headline: "Pondicherry Braces for Monsoon Showers",
+				headline: "இஸ்ரேல் – ஈரான் மோதல்: பின்னணியில் அமெரிக்கா? | அஹமதாபாத் விமான விபத்து | டிரம்ப் ",
 				publishedAt: "2024-06-09",
 			},
 			{
-				image: "https://www.rashtrashabdam.com/wp-content/uploads/2024/06/trichy-sports-thumb.jpg",
+				image: "../images/tamil_news_3.jpg",
 				category: "Tamil",
-				headline: "Trichy Hosts National Youth Games",
+				headline: "வரும் தேர்தலில் திருச்சியில் போட்டி; நடிகர் விஜய் மனசு..'' – திருநாவுக்கரசர் தடாலடி",
+				publishedAt: "2024-06-08",
+			},
+			{
+				image: "../images/tamil_news_4.jpg",
+				category: "Tamil",
+				headline: "குழந்தை பராமரிப்பு விடுப்பு' – உயர் நீதிமன்றம் நிராகரிப்பு;",
+				publishedAt: "2024-06-10",
+			},
+			{
+				image: "../images/tamil_news_2.jpg",
+				category: "Tamil",
+				headline: "இஸ்ரேல் – ஈரான் மோதல்: பின்னணியில் அமெரிக்கா? | அஹமதாபாத் விமான விபத்து | டிரம்ப் ",
+				publishedAt: "2024-06-09",
+			},
+			{
+				image: "../images/tamil_news_3.jpg",
+				category: "Tamil",
+				headline: "வரும் தேர்தலில் திருச்சியில் போட்டி; நடிகர் விஜய் மனசு..'' – திருநாவுக்கரசர் தடாலடி",
 				publishedAt: "2024-06-08",
 			},
 		],
@@ -137,54 +156,57 @@ const languageTitles: any = {
 };
 
 const RegionalNewsGrid = () => (
-	<section id="regional" className="max-w-screen-2xl mx-auto px-4 py-0">
-		<h2 className="text-xl md:text-2xl font-bold mb-6 text-indigo-700">Regional News</h2>
-		<div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
-			{regionalNews.map((region, idx) => {
-				if (idx === 0) {
-					const featuredStory = region.stories[0];
-					const otherStories = region.stories.slice(1);
+	<>
+		<section id="regional" className="max-w-screen-2xl mx-auto px-4 py-0">
+			<h2 className="text-xl md:text-2xl font-bold mb-6 text-indigo-700">Regional News</h2>
+			<div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+				{regionalNews.map((region, idx) => {
+					if (idx === 0) {
+						const featuredStory = region.stories[0];
+						const otherStories = region.stories.slice(1);
+						return (
+							<div key={region.language} className="lg:col-span-2">
+								<div className="flex items-center gap-2 mb-4">
+									<span className="text-lg font-bold uppercase tracking-wider text-indigo-700">
+										{languageTitles[region.language]} NEWS
+									</span>
+								</div>
+								<div className="flex flex-col gap-4">
+									<FeaturedNewsCard {...featuredStory} language={region.language as any} />
+									<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+										{otherStories.map((story, i) => (
+											<SmallNewsCard key={i} {...story} language={region.language as any} publishedAt={story.publishedAt} />
+										))}
+									</div>
+								</div>
+							</div>
+						);
+					}
+
+					// For idx !== 0: 0th and 3rd news use NewsCard, others use SmallNewsCard
 					return (
-						<div key={region.language} className="lg:col-span-2">
+						<div key={region.language} className="lg:col-span-1">
 							<div className="flex items-center gap-2 mb-4">
 								<span className="text-lg font-bold uppercase tracking-wider text-indigo-700">
 									{languageTitles[region.language]} NEWS
 								</span>
 							</div>
 							<div className="flex flex-col gap-4">
-								<FeaturedNewsCard {...featuredStory} language={region.language as any} />
-								<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
-									{otherStories.map((story, i) => (
+								{region.stories.map((story, i) =>
+									i === 0 || i === 3 ? (
+										<NewsCard key={i} {...story} language={region.language as any} publishedAt={story.publishedAt} />
+									) : (
 										<SmallNewsCard key={i} {...story} language={region.language as any} publishedAt={story.publishedAt} />
-									))}
-								</div>
+									)
+								)}
 							</div>
 						</div>
 					);
-				}
-
-				// For idx !== 0: 0th and 3rd news use NewsCard, others use SmallNewsCard
-				return (
-					<div key={region.language} className="lg:col-span-1">
-						<div className="flex items-center gap-2 mb-4">
-							<span className="text-lg font-bold uppercase tracking-wider text-indigo-700">
-								{languageTitles[region.language]} NEWS
-							</span>
-						</div>
-						<div className="flex flex-col gap-4">
-							{region.stories.map((story, i) =>
-								i === 0 || i === 3 ? (
-									<NewsCard key={i} {...story} language={region.language as any} publishedAt={story.publishedAt} />
-								) : (
-									<SmallNewsCard key={i} {...story} language={region.language as any} publishedAt={story.publishedAt} />
-								)
-							)}
-						</div>
-					</div>
-				);
-			})}
-		</div>
-	</section>
+				})}
+			</div>
+		</section>
+		<TeluguNewsGrid />
+	</>
 );
 
 export default RegionalNewsGrid;

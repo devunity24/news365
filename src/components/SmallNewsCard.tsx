@@ -6,15 +6,16 @@ type SmallNewsCardProps = {
 };
 
 const SmallNewsCard = ({ image, headline, publishedAt }: SmallNewsCardProps) => (
-  <article className="flex items-start gap-4 card-hover p-2 rounded-lg transition-all duration-300 hover:bg-gray-50 cursor-pointer">
+  <article className="flex items-start gap-4 card-hover p-2 rounded-lg transition-all duration-300 hover:bg-gray-50 cursor-pointer group">
     <div className="flex flex-col items-center">
-      <div className="w-32 aspect-[4/2.5]">
+      <div className="w-32 aspect-[4/2.5] relative">
         <img
           src={image}
           alt={headline}
-          className="w-full h-full object-cover rounded-md flex-shrink-0"
+          className="w-full h-full object-cover rounded-md flex-shrink-0 transition duration-300 group-hover:brightness-110 group-hover:shadow-lg group-hover:scale-105"
           loading="lazy"
         />
+        <div className="absolute inset-0 rounded-md pointer-events-none bg-gradient-to-t from-white/40 via-white/10 to-transparent opacity-60 group-hover:opacity-80 transition" />
       </div>
       {publishedAt && (
         <span className="mt-2 text-xs text-gray-500 text-left">{publishedAt}</span>
