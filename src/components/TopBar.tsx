@@ -11,8 +11,8 @@ const TopBar = () => {
         {/* Left Section: Logo and Brand Name */}
         <div className="hidden sm:flex items-center gap-3 md:gap-4">
           <img src="../images/logo.png"
-               alt="Rashtrashabdam Logo"
-               className="h-10 md:h-12 w-auto" />
+            alt="Rashtrashabdam Logo"
+            className="h-10 md:h-12 w-auto" />
         </div>
 
         {/* Right Section: Date, Social Icons, Search */}
@@ -39,6 +39,20 @@ const TopBar = () => {
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-[#FF0000] hover:text-red-700 transition-colors">
               <Youtube size={18} />
             </a>
+            {/* Google Play Store Badge */}
+            <a
+              href="https://play.google.com/store/apps/details?id=com.rashtrashabdam"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2"
+            >
+              <img
+                src="../images/google.png"
+                alt="Get it on Google Play"
+                className="h-7 w-auto"
+                style={{ minWidth: 100 }}
+              />
+            </a>
           </div>
 
           {/* Search Input */}
@@ -50,6 +64,7 @@ const TopBar = () => {
             />
             <Search className="absolute left-2 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
           </div>
+
         </div>
       </nav>
     </header>

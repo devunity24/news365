@@ -53,7 +53,7 @@ const VideoCarousel = () => {
   };
 
   return (
-    <section id="videos" className="max-w-screen-2xl mx-auto px-4 py-10 bg-blue-100">
+    <section id="videos" className="max-w-screen-2xl mx-auto px-4 py-10 bg-blue-50">
       <div className="mb-4 flex items-center gap-2">
         <h2 className="text-xl md:text-2xl font-bold text-indigo-700">Latest Videos</h2>
       </div>

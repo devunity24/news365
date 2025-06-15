@@ -24,7 +24,7 @@ const teluguNews = [
 ];
 
 const TeluguNewsGrid = () => (
-    <section className="max-w-screen-2xl mx-auto px-4 py-6 bg-gradient-to-b from-blue-200 to-blue-100">
+    <section className="max-w-screen-2xl mx-auto px-4 py-6 bg-gradient-to-b from-blue-100 to-blue-50">
         <div className="flex items-center gap-2 mb-4">
             <span className="text-lg font-bold uppercase tracking-wider text-blue-700">
                 Telugu News
