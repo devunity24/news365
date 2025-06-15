@@ -2,18 +2,18 @@
 const columns = [
   {
     author: "Dr. Priya Varma",
-    avatar: "https://www.rashtrashabdam.com/wp-content/uploads/2024/06/editor-priya-thumb.jpg",
+    avatar: "../images/editor_1.avif",
     pick: true,
-    headline: "Caste Census: What the New Data Means for India",
-    snippet: "A closer look into the potential impacts of India’s emerging caste census numbers.",
-    lang: "hindi"
+    headline: "ஜாதி கணக்கெடுப்பு: புதிய தரவுகள் இந்தியாவுக்கு என்ன அர்த்தம்?",
+    snippet: "இந்தியாவின் உருவாகி வரும் சாதி கணக்கெடுப்புத் தரவுகள் ஏற்படுத்தக்கூடிய தாக்கங்களை நெருக்கமாக ஆய்வு செய்வது.",
+    lang: "tamil"
   },
   {
     author: "Arjun Nair",
-    avatar: "https://www.rashtrashabdam.com/wp-content/uploads/2024/06/editor-arjun-thumb.jpg",
+    avatar: "../images/editor_2.avif",
     pick: false,
-    headline: "Rain as a Political Spectacle in Southern India",
-    snippet: "How extreme weather has become central to political discourse.",
+    headline: "തെക്കൻ ഇന്ത്യയിൽ മഴ ഒരു രാഷ്ട്രീയ കാഴ്ചവുമാകുമ്പോൾ",
+    snippet: "അത്യാക്രമമായ കാലാവസ്ഥ എങ്ങനെ രാഷ്ട്രീയ വിവാദങ്ങളിൽ കേന്ദ്രസ്ഥാനമായി മാറിയിരിക്കുന്നു.",
     lang: "malayalam"
   },
 ];
@@ -27,7 +27,7 @@ const OpinionColumns = () => (
     <div className="flex flex-wrap gap-8">
       {columns.map((col, idx) => (
         <div key={idx} className="bg-white rounded-xl shadow-card p-6 flex flex-col md:flex-row items-center gap-5 w-full md:w-[48%] card-hover">
-          <img src={col.avatar} alt={col.author} className="w-16 h-16 rounded-full object-cover border-4 border-indigo-700" />
+          <img src={col.avatar} alt={col.author} className="w-16 h-16 rounded-full object-cover border-1 border-indigo-700" />
           <div>
             <h4 className="text-lg font-semibold">{col.headline}</h4>
             <p className="mt-2 text-sm text-gray-800">{col.snippet}</p>
