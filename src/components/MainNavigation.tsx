@@ -186,6 +186,11 @@ const MainNavigation = () => {
                 <Users size={18} /> About Us
               </NavigationMenuLink>
             </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink href="/contact-us" className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2", navItemClasses, "data-[active]:bg-gray-800")}>
+                <Users size={18} /> Contact Us
+              </NavigationMenuLink>
+            </NavigationMenuItem>
 
           </NavigationMenuList>
           <a
@@ -280,6 +285,9 @@ const MainNavigation = () => {
             </a>
             <a href="/about-us" className="flex items-center gap-2 py-2 px-2 rounded hover:bg-gray-800 text-gray-200" onClick={() => setMobileOpen(false)}>
               <Users size={18} /> About Us
+            </a>
+            <a href="/contact-us" className="flex items-center gap-2 py-2 px-2 rounded hover:bg-gray-800 text-gray-200" onClick={() => setMobileOpen(false)}>
+              <Users size={18} /> Contact Us
             </a>
             <a
               href="/join-us"
