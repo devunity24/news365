@@ -79,71 +79,71 @@ const Footer = () => (
       <div className="mt-2">
         <h4 className="font-bold text-base mb-3">Quick Links</h4>
         <div className="grid grid-cols-2 gap-2 mb-6 text-[0.73rem] font-normal">
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
             Home
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 4-4"/></svg>
             National
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/></svg>
             World
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             Sports
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-pink-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 2v4M16 2v4M2 8h20"/></svg>
             Entertainment
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-indigo-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
             Technology
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
             Business
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-blue-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 2l9 21H3z"/></svg>
             Regional
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 20v-6M6 20v-6M18 20v-6"/></svg>
             Opinion
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-red-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
             Videos
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
             About Us
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-yellow-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
             Advertise With Us
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-green-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
             Contact Us
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-pink-600" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
             Grievance Redressal
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-red-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
             Join Us
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-gray-700" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
             Privacy Policy
           </a>
-          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-white/70 hover:bg-blue-200 transition font-semibold shadow-sm hover:shadow text-blue-900">
+          <a href="#" className="flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-200/60 hover:bg-blue-300/80 transition font-semibold shadow-sm hover:shadow text-blue-900">
             <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4"/></svg>
             Terms
           </a>
