@@ -11,7 +11,7 @@ const breakingNews = [
 
 const BreakingNewsTicker: React.FC = () => {
   return (
-    <div className="bg-red-600 text-white py-1.5 overflow-hidden relative sticky top-14 z-50">
+    <div className="bg-red-600 text-gray-100 py-1.5 overflow-hidden relative sticky top-14 z-50">
       <div className="flex items-center relative">
         <div className="bg-red-700 px-4 py-1 flex items-center space-x-2 min-w-[120px] z-10 relative">
           <TrendingUp size={14} />
@@ -22,7 +22,7 @@ const BreakingNewsTicker: React.FC = () => {
           <div className="flex animate-ticker-scroll h-full items-center">
             <div className="flex items-center space-x-8 px-6 whitespace-nowrap">
               {breakingNews.map((item, index) => (
-                <span key={index} className="text-sm">
+                <span key={index} className="text-sm text-gray-900">
                   {item}
                 </span>
               ))}
