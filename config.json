@@ -1,0 +1,13 @@
+{
+  "ACCESS_KEY_ID": "",
+  "SECRET_ACCESS_KEY": "",
+  "REGION": "us-east-1",
+  "TEST": {
+    "BUCKET_NAME": "test.malayalam-news.devunity.in"
+  },
+  "PRODUCTION": {
+    "BUCKET_NAME": "malayalam-news.devunity.in",
+    "DISTRIBUTION_ID": "E38Q7HW9DO2645"
+  },
+  "BUILD_DIR": "dist"
+}
