@@ -22,7 +22,7 @@ const BreakingNewsTicker: React.FC = () => {
           <div className="flex animate-ticker-scroll h-full items-center">
             <div className="flex items-center space-x-8 px-6 whitespace-nowrap">
               {breakingNews.map((item, index) => (
-                <span key={index} className="text-sm text-gray-900">
+                <span key={index} className="text-sm text-white">
                   {item}
                 </span>
               ))}
