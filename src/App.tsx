@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import NewsDetails from "./pages/NewsDetail";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
+import JoinUS from "./pages/JoinUs";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/news-detail" element={<NewsDetails />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/join-us" element={<JoinUS />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
