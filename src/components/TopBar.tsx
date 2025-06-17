@@ -158,7 +158,7 @@ const TopBar = () => {
             {showDropdown && (
               <div
                 ref={dropdownRef}
-                className="absolute left-0 md:left-auto md:-translate-x-[78%] top-11 w-[1120px] max-w-[99vw] bg-white border border-gray-200 rounded-xl shadow-2xl z-100 overflow-visible"
+                className="absolute left-0 md:left-auto md:-translate-x-[78%] top-11 w-[1120px] max-w-[99vw] bg-white border border-gray-200 rounded-xl shadow-2xl z-9999 overflow-visible"
                 style={{ minWidth: 340 }}
               >
                 <div className="flex flex-col md:flex-row">
@@ -167,22 +167,39 @@ const TopBar = () => {
                     <div className="text-[#e4572e] font-bold text-lg mb-3">Top News</div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       {newsToShow.length > 0 ? (
-                        newsToShow.map(news => (
-                          <div
-                            key={news.id}
-                            className="bg-blue-50 rounded-xl flex items-center gap-3 p-2 hover:shadow-md transition cursor-pointer border border-transparent hover:border-[#e4572e]"
-                          >
-                            <img
-                              src={news.image}
-                              alt={news.headline}
-                              className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
-                            />
-                            <div className="flex flex-col justify-between h-full">
-                              <div className="font-semibold text-[15px] text-gray-900 leading-tight line-clamp-2">{news.headline}</div>
-                              <div className="text-xs text-gray-500 mt-1">{news.publishedAt}</div>
+                        newsToShow.map(news => {
+                          // Language chip color map
+                          const langColor: Record<string, string> = {
+                            malayalam: "bg-green-100 text-green-700",
+                            tamil: "bg-pink-100 text-pink-700",
+                            telugu: "bg-yellow-100 text-yellow-700",
+                            kannada: "bg-blue-100 text-blue-700",
+                            hindi: "bg-purple-100 text-purple-700",
+                          };
+                          return (
+                            <div
+                              key={news.id}
+                              className="bg-blue-50 rounded-xl flex items-center gap-3 p-2 hover:shadow-md transition cursor-pointer border border-transparent hover:border-[#e4572e]"
+                            >
+                              <img
+                                src={news.image}
+                                alt={news.headline}
+                                className="w-20 h-20 object-cover rounded-lg flex-shrink-0"
+                              />
+                              <div className="flex flex-col justify-between h-full">
+                                <div className="flex items-center gap-2 mb-1">
+                                  <span
+                                    className={`px-2 py-0.5 rounded-full text-xs font-semibold capitalize ${langColor[news.language] || "bg-gray-100 text-gray-700"}`}
+                                  >
+                                    {news.language}
+                                  </span>
+                                </div>
+                                <div className="font-semibold text-[15px] text-gray-900 leading-tight line-clamp-2">{news.headline}</div>
+                                <div className="text-xs text-gray-500 mt-1">{news.publishedAt}</div>
+                              </div>
                             </div>
-                          </div>
-                        ))
+                          );
+                        })
                       ) : (
                         <div className="col-span-2 text-gray-400 text-sm text-center py-8">No news found</div>
                       )}
