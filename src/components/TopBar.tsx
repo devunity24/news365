@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Search, Facebook, Twitter, Instagram, Linkedin, Youtube, Globe, Rss } from "lucide-react";
+import { Search, Facebook, Instagram, Linkedin, Youtube, Globe, Rss, X as XIcon } from "lucide-react";
 import { format } from 'date-fns';
 import { Input } from "@/components/ui/input";
 import SmallNewsCard from "./SmallNewsCard"; // Import the SmallNewsCard component
@@ -104,8 +104,13 @@ const TopBar = () => {
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#1877F3] hover:text-blue-700 transition-colors">
               <Facebook size={18} />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#1DA1F2] hover:text-sky-600 transition-colors">
-              <Twitter size={18} />
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:opacity-80 transition-colors">
+              <img
+                src="../images/x-icon.png"
+                alt="X (Twitter)"
+                className="w-6 h-6 object-contain"
+                style={{ display: "inline-block", verticalAlign: "middle" }}
+              />
             </a>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-[#E4405F] hover:text-pink-600 transition-colors">
               <Instagram size={18} />
@@ -115,12 +120,6 @@ const TopBar = () => {
             </a>
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-[#FF0000] hover:text-red-700 transition-colors">
               <Youtube size={18} />
-            </a>
-            <a href="https://rashtrashabdam.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-blue-600 transition-colors">
-              <Globe size={18} />
-            </a>
-            <a href="/rss.xml" target="_blank" rel="noopener noreferrer" className="text-orange-500 hover:text-orange-600 transition-colors">
-              <Rss size={18} />
             </a>
             {/* Google Play Store Badge */}
             <a
@@ -132,8 +131,13 @@ const TopBar = () => {
               <img
                 src="../images/google.png"
                 alt="Get it on Google Play"
-                className="h-7 w-auto"
+                className="h-7 w-auto min-w-[28px] hidden sm:block"
                 style={{ minWidth: 100 }}
+              />
+              <img
+                src="../images/google.png"
+                alt="Get it on Google Play"
+                className="h-6 w-auto min-w-[24px] block sm:hidden"
               />
             </a>
           </div>
@@ -158,14 +162,14 @@ const TopBar = () => {
             {showDropdown && (
               <div
                 ref={dropdownRef}
-                className="absolute left-0 md:left-auto md:-translate-x-[78%] top-11 w-[1120px] max-w-[99vw] bg-white border border-gray-200 rounded-xl shadow-2xl z-9999 overflow-visible"
-                style={{ minWidth: 340 }}
+                className="fixed left-1/2 top-20 sm:absolute sm:left-0 sm:top-11 sm:left-auto sm:-translate-x-[78%] w-full sm:w-[1120px] max-w-full sm:max-w-[99vw] bg-white border border-gray-200 rounded-xl shadow-2xl z-9999 overflow-visible px-1 sm:px-0"
+                style={{ minWidth: 0 }}
               >
                 <div className="flex flex-col md:flex-row">
                   {/* Left: News List */}
-                  <div className="flex-1 p-5">
+                  <div className="flex-1 p-2 sm:p-5">
                     <div className="text-[#e4572e] font-bold text-lg mb-3">Top News</div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
                       {newsToShow.length > 0 ? (
                         newsToShow.map(news => {
                           // Language chip color map
@@ -205,17 +209,17 @@ const TopBar = () => {
                       )}
                     </div>
                     <button
-                      className="mt-4 border border-[#e4572e] text-[#e4572e] font-semibold rounded-lg px-5 py-2 bg-white hover:bg-[#fff5f0] transition w-fit"
+                      className="mt-4 border border-[#e4572e] text-[#e4572e] font-semibold rounded-lg px-4 py-2 bg-white hover:bg-[#fff5f0] transition w-full sm:w-fit"
                       // onClick={() => { /* handle show more */ }}
                     >
                       Show More News
                     </button>
                   </div>
                   {/* Right: Categories & Tags */}
-                  <div className="w-56 min-w-[180px] border-l border-gray-100 px-5 py-5 flex flex-col gap-6 bg-blue-50">
-                    <div className="rounded-lg ">
+                  <div className="w-full sm:w-56 min-w-0 sm:min-w-[180px] border-t sm:border-t-0 sm:border-l border-gray-100 px-2 py-4 sm:px-5 sm:py-5 flex flex-col gap-6 bg-blue-50">
+                    <div className="rounded-lg">
                       <div className="text-[#e4572e] font-bold text-base mb-2 text-left">Regional News</div>
-                      <div className="flex flex-col gap-2">
+                      <div className="flex flex-wrap sm:flex-col gap-2">
                         {["Malayalam", "Tamil", "Telugu", "Kannada", "Hindi"].map(region => (
                           <button
                             key={region}

@@ -11,7 +11,7 @@ const breakingNews = [
 
 const BreakingNewsTicker: React.FC = () => {
   return (
-    <div className="bg-red-600 text-gray-100 py-1.5 overflow-hidden relative sticky top-14 z-50">
+    <div className="bg-red-600 text-gray-100 py-1.5 overflow-hidden relative sticky top-16 z-50">
       <div className="flex items-center relative">
         <div className="bg-red-700 px-4 py-1 flex items-center space-x-2 min-w-[120px] z-10 relative">
           <TrendingUp size={14} />
