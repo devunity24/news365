@@ -7,7 +7,7 @@
   },
   "PRODUCTION": {
     "BUCKET_NAME": "malayalam-news.devunity.in",
-    "DISTRIBUTION_ID": "E38Q7HW9DO2645"
+    "DISTRIBUTION_ID": "E1VE8QM2QIHN3Q"
   },
   "BUILD_DIR": "dist"
 }
