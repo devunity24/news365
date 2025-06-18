@@ -83,13 +83,13 @@ const TopBar = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm mb-2">
+    <header className="sticky top-0 z-50 bg-white shadow-sm mb-2 pt-2">
       <nav className="max-w-screen-2xl mx-auto flex items-center justify-between gap-4 md:gap-6 py-3 px-4 md:px-8">
         {/* Left Section: Logo and Brand Name */}
         <div className="hidden sm:flex items-center gap-3 md:gap-4">
           <img src="../images/logo.png"
             alt="Rashtrashabdam Logo"
-            className="h-10 md:h-12 w-auto" />
+            className="h-16 md:h-18 w-auto" />
         </div>
 
         {/* Right Section: Date, Social Icons, Search */}
