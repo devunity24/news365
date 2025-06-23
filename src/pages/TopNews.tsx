@@ -41,7 +41,7 @@ const TopNews = () => {
 								alt={topNews[0].title}
 								className="w-full h-80 object-cover"
 							/>
-							<div className="p-6">
+							<div className="p-6 ">
 								<h2 className="text-2xl font-bold mb-2 leading-tight" style={{ fontFamily: "'Lato', 'Arial', sans-serif", color: "#2F3137" }}>
 									{topNews[0].title}
 								</h2>
@@ -116,7 +116,7 @@ const TopNews = () => {
 									image: "../images/top_news_8.jpg",
 								},
 							].map((story, idx) => (
-								<div key={idx} className="p-5 flex items-start gap-4 group cursor-pointer transition-all duration-200 rounded-lg hover:bg-gray-50 group-hover:bg-gray-50">
+								<div key={idx} className="p-5 flex items-start gap-4 group cursor-pointer transition-all duration-200 rounded-lg hover:bg-gray-50 group-hover:bg-gray-50 group-hover:text-[#2E3CB0]">
 									<img
 										src={story.image}
 										alt={story.title}
