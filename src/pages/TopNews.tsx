@@ -5,24 +5,24 @@ const topNews = [
 	{
 		title: "India’s Business Activity Hits 14-Month High in June, Driven by Robust Demand and Exports",
 		date: "June 23, 2025",
-		image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80",
+		image: "../images/top_news_1.avif",
 		featured: true,
 	},
 	{
 		title: "India Set to Outpace G7 Economies in Growth: Report",
 		date: "June 23, 2025",
-		image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+		image: "../images/top_news_2.jpg",
 		featured: false,
 	},
 	{
 		title: "Container Liquor Shops Gain Popularity in Noida Amid Policy Shift and Space Crunch",
 		date: "June 23, 2025",
-		image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80",
+		image: "../images/top_news_3.webp",
 		featured: false,
 	},{
-		title: "India Set to Outpace G7 Economies in Growth: Report",
+		title: "Assembly Bypoll Result 2025 Updates: BJP, AAP Win 1 Seat Each In Gujarat, Congress Wins In Kerala",
 		date: "June 23, 2025",
-		image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80",
+		image: "../images/top_news_4.webp",
 		featured: false,
 	}
 ];
@@ -92,49 +92,49 @@ const TopNews = () => {
 						<div className="divide-y divide-gray-200">
 							{[
 								{
-									title: "Dalit men tonsured, forced to crawl over cow smuggling allegations in Odisha",
+									title: "Actor Srikanth Sent To Judicial Custody Till July 7 In Drugs Case",
 									date: "June 23, 2025",
 									isRed: false,
-									image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=200&q=80"
+									image: "../images/top_news_5.webp",
 								},
 								{
 									title: "Butterfly Unveils a Bold New Identity That Celebrates Change and Champions the Original You",
 									date: "June 23, 2025",
-									isRed: true,
-									image: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=200&q=80"
+									isRed: false,
+									image: "../images/top_news_6.png",
 								},
 								{
 									title: "Espionage case: YouTuber Jyoti Malhotra’s judicial custody extended by two weeks",
 									date: "June 23, 2025",
 									isRed: false,
-									image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=200&q=80"
+									image: "../images/top_news_7.webp",
 								},
 								{
 									title: "HT Labs Shines at WAN-IFRA South Asian Digital Media Awards 2025",
 									date: "June 23, 2025",
 									isRed: false,
-									image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=200&q=80"
+									image: "../images/top_news_8.jpg",
 								},
 							].map((story, idx) => (
-								<div key={idx} className="p-5 flex items-start gap-4 group cursor-pointer transition-all duration-200 rounded-lg group-hover:bg-[#f0f4ff] group-hover:shadow-xl group-hover:scale-[1.03]">
+								<div key={idx} className="p-5 flex items-start gap-4 group cursor-pointer transition-all duration-200 rounded-lg hover:bg-gray-50 group-hover:bg-gray-50">
 									<img
 										src={story.image}
 										alt={story.title}
-										className="w-20 h-20 object-cover rounded-md flex-shrink-0 bg-gray-200"
+										className="w-20 h-20 object-cover rounded-md flex-shrink-0 bg-gray-200 transition duration-300 group-hover:brightness-110 group-hover:shadow-lg group-hover:scale-105"
 									/>
 									<div className="flex-1 min-w-0">
 										<div
 											className={
-												"text-lg font-bold mb-2 transition-colors duration-150" +
-												(story.isRed ? " text-[#c94b43] group-hover:text-[#2E3CB0]" : " text-black group-hover:text-[#2E3CB0]")
+												"text-md font-bold mb-2 transition-colors duration-150 group-hover:text-[#2E3CB0]" +
+												(story.isRed ? " text-[#c94b43]" : " text-black")
 											}
-											style={{ fontFamily: "'Lato', 'Arial', sans-serif", color: '#2F3137' }}
+											style={{ fontFamily: "'Lato', 'Arial', sans-serif" }}
 										>
 											{story.title}
 										</div>
 										<div
 											className="flex items-center gap-3 text-xs mt-auto transition-colors duration-150 group-hover:text-[#2E3CB0]"
-											style={{ fontFamily: "'Lato', 'Arial', sans-serif", color: '#2F3137' }}
+											style={{ fontFamily: "'Lato', 'Arial', sans-serif" }}
 										>
 											<span className="font-semibold tracking-wide">LATEST NEWS</span>
 											<span>{story.date}</span>
