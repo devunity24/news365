@@ -33,7 +33,7 @@ const JumpToTopButton = () => {
 
 const Index = () => {
   return (
-    <main className="bg-white min-h-screen font-sans">
+    <main className="min-h-screen font-sans" style={{ backgroundColor: "#fbf7f7" }}>
       <TopHeader />
       <TopBar />
       <MainNavigation />

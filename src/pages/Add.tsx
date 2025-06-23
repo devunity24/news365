@@ -2,7 +2,7 @@ import React from "react";
 
 const AdvertisementPage = () => {
   return (
-    <div className="bg-white min-h-[120px] flex flex-col items-center justify-center py-10 px-2">
+    <div className="min-h-[120px] flex flex-col items-center justify-center py-10 px-2">
       <div
         className="rounded-xl shadow-lg border border-gray-200 bg-gradient-to-r from-[#f8fafc] to-[#e0e7ef] p-6 md:p-8 flex flex-col items-center "
         style={{
