@@ -93,14 +93,14 @@ const TopBar = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm mb-2 pt-2">
-      <nav className="max-w-screen-2xl mx-auto flex items-center justify-between gap-4 md:gap-6 py-3 px-4 md:px-8 relative">
+    <header className="sticky top-0 z-50 bg-white shadow-sm mb-2 pt-1">
+      <nav className="max-w-screen-2xl mx-auto flex items-center justify-between gap-4 md:gap-6 py-2 px-4 md:px-8 relative">
         {/* Left Section: Logo */}
         <div className="flex items-center gap-3 md:gap-4">
           <img
             src="../images/news356.png"
             alt="Rashtrashabdam Logo"
-            className="h-16 md:h-18 w-auto"
+            className="h-12 md:h-14 w-auto"
           />
         </div>
 
@@ -110,7 +110,7 @@ const TopBar = () => {
           style={{ zIndex: 10 }}
         >
           <span
-            className="text-3xl md:text-4xl font-serif font-bold tracking-wide text-center"
+            className="text-2xl md:text-3xl font-serif font-bold tracking-wide text-center"
             style={{
               letterSpacing: "0.08em",
               fontFamily: `'Times New Roman', Times, serif`,
