@@ -94,7 +94,9 @@ const TopBar = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm mb-2 pt-1">
-      <nav className="max-w-screen-2xl mx-auto flex items-center justify-between gap-4 md:gap-6 py-2 px-4 md:px-8 relative">
+      <nav className={
+        `max-w-screen-2xl mx-auto flex items-center justify-between gap-4 md:gap-6 px-4 md:px-8 relative transition-all duration-200 ${scrolled ? 'py-4' : 'py-2'}`
+      }>
         {/* Left Section: Logo */}
         <div className="flex items-center gap-3 md:gap-4">
           <img
@@ -105,22 +107,24 @@ const TopBar = () => {
         </div>
 
         {/* Centered Brand Name */}
-        <div
-          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-full pointer-events-none hidden sm:flex"
-          style={{ zIndex: 10 }}
-        >
-          <span
-            className="text-2xl md:text-3xl font-serif font-bold tracking-wide text-center"
-            style={{
-              letterSpacing: "0.08em",
-              fontFamily: `'Times New Roman', Times, serif`,
-              pointerEvents: "auto"
-            }}
+        {!scrolled && (
+          <div
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-full pointer-events-none hidden sm:flex"
+            style={{ zIndex: 10 }}
           >
-            <span style={{ color: "#2eb05c" }}>NEWS365</span>{" "}
-            <span style={{ color: "#2e3cb0" }}>TIMES</span>
-          </span>
-        </div>
+            <span
+              className="text-2xl md:text-3xl font-serif font-bold tracking-wide text-center"
+              style={{
+                letterSpacing: "0.08em",
+                fontFamily: `'Times New Roman', Times, serif`,
+                pointerEvents: "auto"
+              }}
+            >
+              <span style={{ color: "#2eb05c" }}>NEWS365</span>{" "}
+              <span style={{ color: "#2e3cb0" }}>TIMES</span>
+            </span>
+          </div>
+        )}
 
         {/* Right Section: Date, Social Icons, Search or Navigation */}
         <div className="flex items-center gap-3 md:gap-5 flex-1 justify-end">

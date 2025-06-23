@@ -5,6 +5,7 @@ import TopHeader from "../pages/TopHeader";
 import MainNavigation from "../components/MainNavigation";
 import BreakingNews from "../components/BreakingNewsTicker";
 import AddSection from "../pages/Add";
+import TopNews from "../pages/TopNews";
 import React, { useEffect, useState } from "react";
 
 const JumpToTopButton = () => {
@@ -38,7 +39,7 @@ const Index = () => {
       <TopBar />
       <MainNavigation />
       <BreakingNews/>
-      <AddSection/>
+      <TopNews/>
     </main>
   );
 };
