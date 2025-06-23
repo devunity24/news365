@@ -1,7 +1,7 @@
 import React from "react";
 import { Facebook, Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
 import Footer from "../components/Footer";
-import TopBar from "../components/TopBar";
+import TopBar from "../components/Header";
 import MainNavigation from "../components/MainNavigation";
 import SmallNewsCard from "../components/SmallNewsCard";
 

@@ -1,15 +1,10 @@
 // Rashtrashabdam News Portal Homepage Layout
 
-import TopBar from "../components/TopBar";
+import TopBar from "../components/Header";
+import TopHeader from "../pages/TopHeader";
 import MainNavigation from "../components/MainNavigation";
-import NewsBanner from "../components/NewsBanner"; // Added import
-import InfoBar from "../components/InfoBar";
-import BreakingNewsTicker from "../components/BreakingNewsTicker";
-import HeroCarousel from "../components/HeroCarousel";
-import RegionalNewsGrid from "../components/RegionalNewsGrid";
-import VideoCarousel from "../components/VideoCarousel";
-import OpinionColumns from "../components/OpinionColumns";
-import Footer from "../components/Footer";
+import BreakingNews from "../components/BreakingNewsTicker";
+import AddSection from "../pages/Add";
 import React, { useEffect, useState } from "react";
 
 const JumpToTopButton = () => {
@@ -39,17 +34,11 @@ const JumpToTopButton = () => {
 const Index = () => {
   return (
     <main className="bg-white min-h-screen font-sans">
+      <TopHeader />
       <TopBar />
       <MainNavigation />
-      <InfoBar />
-      <NewsBanner />
-      <BreakingNewsTicker />
-      <HeroCarousel />
-      <RegionalNewsGrid />
-      <VideoCarousel />
-      <OpinionColumns />
-      <Footer />
-      <JumpToTopButton />
+      <BreakingNews/>
+      <AddSection/>
     </main>
   );
 };

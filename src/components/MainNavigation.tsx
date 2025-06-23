@@ -1,355 +1,131 @@
-import React, { useState } from 'react';
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-import { cn } from "@/lib/utils";
-import { Home, Newspaper, Video, Users, BookOpen, Globe } from 'lucide-react';
+import React, { useState } from "react";
+import { Home } from "lucide-react";
 
-const mainCategories = [
-  { title: "National", href: "/category/national", description: "Latest news from across the nation." },
-  { title: "World", href: "/category/world", description: "Global events and international news." },
-  { title: "Sports", href: "/category/sports", description: "Scores, highlights, and sports news." },
-  { title: "Entertainment", href: "/category/entertainment", description: "Movies, music, and celebrity news." },
-  { title: "Technology", href: "/category/technology", description: "Updates on gadgets and tech trends." },
-  { title: "Business", href: "/category/business", description: "Market updates and financial news." },
+const mainMenus = [
+  { title: "Home", href: "/", icon: <Home size={18} />, highlight: "none" },
+  { title: "The Bodhi Tree", href: "/the-bodhi-tree" },
+  { title: "PSU News 365", href: "/psu-news-365" },
+  { title: "Govt Policy", href: "/govt-policy" },
+  { title: "Sansad News", href: "/sansad-news" },
+  { title: "Memoirs of a Maverick", href: "/memoirs-of-a-maverick" },
+  { title: "Astro Vision", href: "/astro-vision" },
+  { title: "Board of Governors", href: "/board-of-governors" },
+  { title: "Brushstrokes", href: "/brushstrokes" },
 ];
 
-const regionalLanguages = [
-  { title: "Malayalam", href: "/regional/malayalam", description: "News in Malayalam." },
-  { title: "Tamil", href: "/regional/tamil", description: "News in Tamil." },
-  { title: "Telugu", href: "/regional/telugu", description: "News in Telugu." },
-  { title: "Kannada", href: "/regional/kannada", description: "News in Kannada." },
-  { title: "Hindi", href: "/regional/hindi", description: "News in Hindi." },
-];
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-blue-100 hover:text-blue-700 focus:bg-blue-100 focus:text-blue-700",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-gray-400">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";
-
-const MainNavigation = ({ fromTopBar = false }: { fromTopBar?: boolean }) => {
+const MainNavigation = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [moreOpen, setMoreOpen] = useState(false);
-
-  // Scroll to #videos section if on homepage, else navigate to /#videos
-  const handleVideosClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (window.location.pathname === "/") {
-      e.preventDefault();
-      const el = document.getElementById("videos");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
-  // Scroll to #opinion section if on homepage, else navigate to /#opinion
-  const handleOpinionClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (window.location.pathname === "/") {
-      e.preventDefault();
-      const el = document.getElementById("opinion");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
-
-  // Adjust styles if opened from TopBar
-  const navItemClasses = fromTopBar
-    ? "bg-transparent text-gray-700 hover:bg-blue-100 hover:text-blue-700 focus:bg-blue-100 focus:text-blue-700 text-sm"
-    : "bg-transparent text-gray-200 hover:bg-blue-100 hover:text-blue-400 focus:bg-blue-100 focus:text-blue-400";
-  const contentClasses = fromTopBar
-    ? "bg-white"
-    : "bg-charcoal-500 border-gray-800 text-gray-200";
-  const menuFontSize = fromTopBar ? "text-sm" : "";
-
-  // Menus to show directly on TopBar, rest under "More"
-  const mainMenus = [
-    { title: "Home", icon: <Home size={18} />, href: "/" },
-    { title: "Govt Accreditation", icon: <Globe size={18} />, href: "/govt-accreditation" },
-    { title: "Categories", icon: <Newspaper size={18} />, type: "categories" },
-    { title: "Regional News", icon: <Globe size={18} />, type: "regional" },
-    { title: "Opinion", icon: <BookOpen size={18} />, href: "/opinion" },
-    { title: "Videos", icon: <Video size={18} />, href: "/#videos" },
-    { title: "About Us", icon: <Users size={18} />, href: "/about-us" },
-    { title: "Contact Us", icon: <Users size={18} />, href: "/contact-us" },
-  ];
-
-  // For TopBar: show first 5, rest under "More"
-  const showMenus = fromTopBar ? mainMenus.slice(0, 5) : mainMenus;
-  const moreMenus = fromTopBar ? mainMenus.slice(5) : [];
 
   return (
-    <div className={fromTopBar ? "bg-white" : "bg-charcoal-500 border-b border-gray-800 shadow-sm relative z-30"}>
-      {/* Mobile Hamburger */}
-      <div className="flex items-center justify-between md:hidden px-4 py-2">
-        <img src="../images/logo.png" alt="Logo" className="h-8" />
+    <nav className="bg-[#3a4147] border-b border-[#444d56] shadow-sm">
+      {/* Desktop menu */}
+      <div className="hidden sm:flex justify-center gap-2 px-4 py-1 flex-nowrap overflow-x-auto whitespace-nowrap w-full items-center">
+        {mainMenus.map(menu => (
+          <a
+            key={menu.title}
+            href={menu.href}
+            className={
+              "flex items-center gap-2 px-4 py-1 text-white font-medium rounded transition-colors whitespace-nowrap hover:bg-[#2e353b] hover:text-white" +
+              (menu.title === "Home" ? " font-bold" : "")
+            }
+            style={{
+              background: menu.title === "Home" ? "transparent" : undefined,
+              fontFamily: "'Segoe UI', 'Arial', sans-serif",
+              fontSize: "14px",
+              minWidth: 0,
+              textAlign: "center",
+              letterSpacing: "0.01em"
+            }}
+          >
+            {menu.icon && <span className="text-white">{menu.icon}</span>}
+            {menu.title}
+          </a>
+        ))}
+        <a
+          href="/join-us"
+          className="ml-2 px-4 py-1 bg-[#c94b43] text-white font-bold rounded transition-colors whitespace-nowrap hover:bg-[#a63a34]"
+          style={{
+            fontFamily: "'Segoe UI', 'Arial', sans-serif",
+            fontSize: "14px",
+            letterSpacing: "0.01em"
+          }}
+        >
+          JOIN US
+        </a>
+      </div>
+      {/* Mobile hamburger */}
+      <div className="flex sm:hidden items-center px-2 py-1">
         <button
-          className={fromTopBar ? "text-gray-700 focus:outline-none" : "text-gray-200 focus:outline-none"}
-          onClick={() => setMobileOpen((v) => !v)}
+          className="text-white focus:outline-none"
+          onClick={() => setMobileOpen(true)}
           aria-label="Open menu"
         >
-          <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2">
-            <path d="M4 8h20M4 16h20" />
+          <svg width="32" height="32" fill="none" stroke="currentColor" strokeWidth="2">
+            <rect width="32" height="32" fill="none"/>
+            <line x1="7" y1="11" x2="25" y2="11" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <line x1="7" y1="16" x2="25" y2="16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <line x1="7" y1="21" x2="25" y2="21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
           </svg>
         </button>
-      </div>
-      {/* Desktop Menu */}
-      <div className="hidden md:block">
-        <NavigationMenu className={`max-w-screen-2xl mx-auto py-2 px-4 md:px-8 ${menuFontSize}`}>
-          <NavigationMenuList className={`flex flex-wrap justify-center md:justify-start gap-1 ${menuFontSize}`}>
-            {showMenus.map((menu, idx) => {
-              if (menu.type === "categories") {
-                return (
-                  <NavigationMenuItem key="categories">
-                    <NavigationMenuTrigger className={cn("flex items-center gap-2", navItemClasses, "data-[state=open]:bg-gray-800")}>
-                      <Newspaper size={18} /> Categories
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent className={contentClasses}>
-                      <ul className="grid w-[200px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                        {mainCategories.map((category) => (
-                          <ListItem
-                            key={category.title}
-                            title={category.title}
-                            href={category.href}
-                          >
-                            {category.description}
-                          </ListItem>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                );
-              }
-              if (menu.type === "regional") {
-                return (
-                  <NavigationMenuItem key="regional">
-                    <NavigationMenuTrigger className={cn("flex items-center gap-2", navItemClasses, "data-[state=open]:bg-gray-800")}>
-                      <Globe size={18} /> Regional News
-                    </NavigationMenuTrigger>
-                    <NavigationMenuContent className={contentClasses}>
-                      <ul className="grid w-[200px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                        {regionalLanguages.map((language) => (
-                          <ListItem
-                            key={language.title}
-                            title={language.title}
-                            href={language.href}
-                          >
-                            {language.description}
-                          </ListItem>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                );
-              }
-              return (
-                <NavigationMenuItem key={menu.title}>
-                  <NavigationMenuLink
-                    href={menu.href}
-                    className={cn(navigationMenuTriggerStyle(), "flex items-center gap-2", navItemClasses, "data-[active]:bg-gray-800")}
-                  >
-                    {menu.icon} {menu.title}
-                  </NavigationMenuLink>
-                </NavigationMenuItem>
-              );
-            })}
-            {fromTopBar && moreMenus.length > 0 && (
-              <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className={cn("flex items-center gap-2", navItemClasses, "data-[state=open]:bg-gray-800")}
-                  onMouseEnter={() => setMoreOpen(true)}
-                  onMouseLeave={() => setMoreOpen(false)}
+        {/* Mobile Drawer */}
+        {mobileOpen && (
+          <div className="fixed inset-0 z-50 bg-black/50 flex">
+            <div className="bg-[#23272b] w-64 h-full shadow-lg p-6 flex flex-col gap-2 animate-slide-in">
+              <button
+                className="mb-4 self-end text-white"
+                onClick={() => setMobileOpen(false)}
+                aria-label="Close menu"
+              >
+                <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2">
+                  <line x1="6" y1="6" x2="22" y2="22" stroke="currentColor" strokeWidth="2" />
+                  <line x1="6" y1="22" x2="22" y2="6" stroke="currentColor" strokeWidth="2" />
+                </svg>
+              </button>
+              {mainMenus.map(menu => (
+                <a
+                  key={menu.title}
+                  href={menu.href}
+                  className="flex items-center gap-2 px-3 py-2 text-white rounded hover:bg-[#2e353b] font-medium"
+                  style={{
+                    fontFamily: "'Segoe UI', 'Arial', sans-serif",
+                    fontSize: "15px",
+                    letterSpacing: "0.01em"
+                  }}
+                  onClick={() => setMobileOpen(false)}
                 >
-                  More
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className={contentClasses}>
-                  <ul className="grid w-[200px] gap-3 p-4 md:w-[400px]">
-                    {moreMenus.map((menu) => {
-                      if (menu.type === "categories") {
-                        return (
-                          <li key="categories">
-                            <div className="font-semibold mb-1">Categories</div>
-                            <ul>
-                              {mainCategories.map((category) => (
-                                <ListItem
-                                  key={category.title}
-                                  title={category.title}
-                                  href={category.href}
-                                >
-                                  {category.description}
-                                </ListItem>
-                              ))}
-                            </ul>
-                          </li>
-                        );
-                      }
-                      if (menu.type === "regional") {
-                        return (
-                          <li key="regional">
-                            <div className="font-semibold mb-1">Regional News</div>
-                            <ul>
-                              {regionalLanguages.map((language) => (
-                                <ListItem
-                                  key={language.title}
-                                  title={language.title}
-                                  href={language.href}
-                                >
-                                  {language.description}
-                                </ListItem>
-                              ))}
-                            </ul>
-                          </li>
-                        );
-                      }
-                      return (
-                        <ListItem
-                          key={menu.title}
-                          title={menu.title}
-                          href={menu.href}
-                        >
-                          {/* No description for simple links */}
-                        </ListItem>
-                      );
-                    })}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            )}
-          </NavigationMenuList>
-          <a
-            href="/join-us"
-            className={`ml-2 px-4 py-2 bg-red-600 text-white font-bold rounded shadow hover:bg-red-700 transition-colors ${menuFontSize}`}
-          >
-            JOIN US
-          </a>
-        </NavigationMenu>
-      </div>
-      {/* Mobile Drawer */}
-      {mobileOpen && (
-        <div className="md:hidden fixed inset-0 z-40 bg-black/40" onClick={() => setMobileOpen(false)}>
-          <div
-            className="absolute top-0 left-0 w-64 h-full bg-charcoal-500 shadow-lg p-6 flex flex-col gap-2"
-            onClick={e => e.stopPropagation()}
-          >
-            <button
-              className="mb-4 self-end text-gray-200"
-              onClick={() => setMobileOpen(false)}
-              aria-label="Close menu"
-            >
-              <svg width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M6 6l16 16M6 22L22 6" />
-              </svg>
-            </button>
-            <a href="/" className="flex items-center gap-2 py-2 px-2 rounded hover:bg-gray-800 text-gray-200" onClick={() => setMobileOpen(false)}>
-              <Home size={18} /> Home
-            </a>
-            <a href="/govt-accreditation" className="flex items-center gap-2 py-2 px-2 rounded hover:bg-gray-800 text-gray-200" onClick={() => setMobileOpen(false)}>
-              <Globe size={18} /> Govt Accreditation
-            </a>
-            <details>
-              <summary className="flex items-center gap-2 py-2 px-2 rounded hover:bg-gray-800 text-gray-200 cursor-pointer">
-                <Newspaper size={18} /> Categories
-              </summary>
-              <div className="pl-6 flex flex-col gap-1 mt-1">
-                {mainCategories.map((cat) => (
-                  <a key={cat.title} href={cat.href} className="py-1 px-2 rounded hover:bg-gray-800 text-gray-200" onClick={() => setMobileOpen(false)}>
-                    {cat.title}
-                  </a>
-                ))}
-              </div>
-            </details>
-            <details>
-              <summary className="flex items-center gap-2 py-2 px-2 rounded hover:bg-gray-800 text-gray-200 cursor-pointer">
-                <Globe size={18} /> Regional News
-              </summary>
-              <div className="pl-6 flex flex-col gap-1 mt-1">
-                {regionalLanguages.map((lang) => (
-                  <a key={lang.title} href={lang.href} className="py-1 px-2 rounded hover:bg-gray-800 text-gray-200" onClick={() => setMobileOpen(false)}>
-                    {lang.title}
-                  </a>
-                ))}
-              </div>
-            </details>
-            <a
-              href="/opinion"
-              onClick={e => {
-                if (window.location.pathname === "/") {
-                  e.preventDefault();
-                  setMobileOpen(false);
-                  setTimeout(() => {
-                    const el = document.getElementById("opinion");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }, 100);
-                } else {
-                  setMobileOpen(false);
-                }
-              }}
-              className="flex items-center gap-2 py-2 px-2 rounded hover:bg-gray-800 text-gray-200"
-            >
-              <BookOpen size={18} /> Opinion
-            </a>
-            <a
-              href="/#videos"
-              onClick={e => {
-                if (window.location.pathname === "/") {
-                  e.preventDefault();
-                  setMobileOpen(false);
-                  setTimeout(() => {
-                    const el = document.getElementById("videos");
-                    if (el) el.scrollIntoView({ behavior: "smooth" });
-                  }, 100);
-                } else {
-                  setMobileOpen(false);
-                }
-              }}
-              className="flex items-center gap-2 py-2 px-2 rounded hover:bg-gray-800 text-gray-200"
-            >
-              <Video size={18} /> Videos
-            </a>
-            <a href="/about-us" className="flex items-center gap-2 py-2 px-2 rounded hover:bg-gray-800 text-gray-200" onClick={() => setMobileOpen(false)}>
-              <Users size={18} /> About Us
-            </a>
-            <a href="/contact-us" className="flex items-center gap-2 py-2 px-2 rounded hover:bg-gray-800 text-gray-200" onClick={() => setMobileOpen(false)}>
-              <Users size={18} /> Contact Us
-            </a>
-            <a
-              href="/join-us"
-              className="mt-4 px-4 py-2 bg-red-600 text-white font-bold rounded shadow hover:bg-red-700 transition-colors"
-              onClick={() => setMobileOpen(false)}
-            >
-              JOIN US
-            </a>
+                  {menu.icon && <span className="text-white">{menu.icon}</span>}
+                  {menu.title}
+                </a>
+              ))}
+              <a
+                href="/join-us"
+                className="mt-2 px-4 py-2 bg-[#c94b43] text-white font-bold rounded transition-colors hover:bg-[#a63a34]"
+                style={{
+                  fontFamily: "'Segoe UI', 'Arial', sans-serif",
+                  fontSize: "15px",
+                  letterSpacing: "0.01em"
+                }}
+                onClick={() => setMobileOpen(false)}
+              >
+                JOIN US
+              </a>
+            </div>
+            {/* Click outside to close */}
+            <div className="flex-1" onClick={() => setMobileOpen(false)} />
           </div>
-        </div>
-      )}
-    </div>
+        )}
+      </div>
+      {/* Optional: add a simple slide-in animation */}
+      <style>{`
+        @keyframes slide-in {
+          from { transform: translateX(-100%); }
+          to { transform: translateX(0); }
+        }
+        .animate-slide-in {
+          animation: slide-in 0.2s ease;
+        }
+      `}</style>
+    </nav>
   );
 };
 

@@ -2,11 +2,11 @@ import React from "react";
 import { TrendingUp } from "lucide-react";
 
 const breakingNews = [
-  "പുതിയ ഉയരങ്ങളിൽ പുനർനവീകരണ ഊർജ്ജ മേഖല",
-  "ദക്ഷിണ അമേരിക്കയിൽ ലിഥിയം ഖനനം വ്യാപകമാകുന്നു",
-  "ചൈനീസ് അടിസ്ഥാന സൗകര്യ ചെലവിൽ ഇരുമ്പ് ധാതു വില ഉയരുന്നു",
-  "നിക്കൽ കുറവ് വിലയിലുണ്ടാക്കുന്ന അനിശ്ചിതത്വം",
-  "വെള്ളി വ്യാവസായിക ആവശ്യങ്ങൾ വിതരണം മറികടക്കുന്നു",
+  "Renewable energy sector reaches new heights",
+  "Lithium mining expands across South America",
+  "Iron ore prices rise on Chinese infrastructure spending",
+  "Nickel shortage creates market uncertainty",
+  "Industrial demand for silver outpaces supply",
 ];
 
 const BreakingNewsTicker: React.FC = () => {
@@ -34,8 +34,6 @@ const BreakingNewsTicker: React.FC = () => {
     </div>
   );
 };
-
-
 
 
 export default BreakingNewsTicker;
