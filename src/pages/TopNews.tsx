@@ -51,8 +51,8 @@ const Badge = ({
 
 const TopNews = () => {
 	return (
-		<section className="px-4 py-8 max-w-screen-2xl mx-auto">
-			<div className="flex flex-col lg:flex-row gap-8">
+		<section className="px-4 py-4 max-w-screen-2xl mx-auto">
+			<div className="flex flex-col lg:flex-row gap-4">
 				{/* News Section */}
 				<div className="w-full lg:basis-[60%] lg:max-w-[60%] min-w-0">
 					{/* Featured News */}
@@ -86,7 +86,7 @@ const TopNews = () => {
 									alt={news.title}
 									className="w-full h-32 object-cover"
 								/>
-								<div className="p-4 flex-1 flex flex-col justify-between">
+								<div className="p-4 flex flex-col justify-between">
 									<div className="flex items-center gap-3 mb-2">
 										<Badge type="latest">LATEST</Badge>
 										<span className="text-xs text-gray-500">{news.date}</span>
@@ -100,7 +100,7 @@ const TopNews = () => {
 					</div>
 				</div>
 				{/* Advertisement Sidebar */}
-				<div className="w-full lg:basis-[40%] lg:max-w-[40%] flex-shrink-0 flex flex-col gap-8">
+				<div className="w-full lg:basis-[40%] lg:max-w-[40%] flex-shrink-0 flex flex-col gap-4">
 					<AdvertisementPage />
 					{/* Top Stories Section */}
 					<div className="bg-white rounded-lg shadow-lg p-0 overflow-hidden">

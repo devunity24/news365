@@ -65,13 +65,13 @@ const Badge = ({
   if (type === "featured") {
     return (
       <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2">
-        <Star size={13} className="text-yellow-500" /> {children}
+        <Star size={12} className="text-yellow-500" /> {children}
       </span>
     );
   }
   return (
     <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-red-100 text-red-700 text-xs font-semibold mr-2">
-      <Flame size={13} className="text-red-500" /> {children}
+      <Flame size={12} className="text-red-500" /> {children}
     </span>
   );
 };
@@ -176,10 +176,7 @@ const NationalNewsSection = () => {
                   >
                     {news.title}
                   </div>
-                  {/* Optionally show description for remaining news */}
-                  {news.description && (
-                    <div className="text-xs text-gray-600">{news.description}</div>
-                  )}
+                  <div className="text-xs text-gray-600">{news.description}</div>
                 </div>
               </div>
             ))}
