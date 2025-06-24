@@ -1,5 +1,6 @@
 import React from "react";
 import AdvertisementPage from "./Add";
+import { Star, Flame } from "lucide-react";
 
 const topNews = [
 	{
@@ -27,9 +28,30 @@ const topNews = [
 	}
 ];
 
+const Badge = ({
+  type,
+  children,
+}: {
+  type: "featured" | "latest";
+  children: React.ReactNode;
+}) => {
+  if (type === "featured") {
+    return (
+      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-800 text-xs font-semibold mr-2">
+        <Star size={13} className="text-yellow-500" /> {children}
+      </span>
+    );
+  }
+  return (
+    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-red-100 text-red-700 text-xs font-semibold mr-2">
+      <Flame size={13} className="text-red-500" /> {children}
+    </span>
+  );
+};
+
 const TopNews = () => {
 	return (
-		<section className="px-4 py-8">
+		<section className="px-4 py-8 max-w-screen-2xl mx-auto">
 			<div className="flex flex-col lg:flex-row gap-8">
 				{/* News Section */}
 				<div className="w-full lg:basis-[60%] lg:max-w-[60%] min-w-0">
@@ -42,15 +64,13 @@ const TopNews = () => {
 								className="w-full h-80 object-cover"
 							/>
 							<div className="p-6 ">
+								<div className="flex items-center gap-3 mb-2">
+									<Badge type="featured">FEATURED</Badge>
+									<span className="text-xs text-gray-500">{topNews[0].date}</span>
+								</div>
 								<h2 className="text-2xl font-bold mb-2 leading-tight" style={{ fontFamily: "'Lato', 'Arial', sans-serif", color: "#2F3137" }}>
 									{topNews[0].title}
 								</h2>
-								<div className="flex items-center gap-4 text-sm mb-2" style={{ fontFamily: "'Lato', 'Arial', sans-serif", color: "#2F3137" }}>
-									<span className="font-semibold tracking-wide" style={{ color: "#2F3137" }}>
-										FEATURED ARTICLE
-									</span>
-									<span style={{ color: "#2F3137" }}>{topNews[0].date}</span>
-								</div>
 							</div>
 						</div>
 					</div>
@@ -67,15 +87,13 @@ const TopNews = () => {
 									className="w-full h-32 object-cover"
 								/>
 								<div className="p-4 flex-1 flex flex-col justify-between">
+									<div className="flex items-center gap-3 mb-2">
+										<Badge type="latest">LATEST</Badge>
+										<span className="text-xs text-gray-500">{news.date}</span>
+									</div>
 									<h3 className="text-md font-bold mb-2 leading-tight" style={{ fontFamily: "'Lato', 'Arial', sans-serif", color: "#263228" }}>
 										{news.title}
 									</h3>
-									<div className="flex items-center gap-3 text-xs mt-auto" style={{ fontFamily: "'Lato', 'Arial', sans-serif", color: "#263228" }}>
-										<span className="font-semibold tracking-wide" style={{ color: "#263228" }}>
-											FEATURED ARTICLE
-										</span>
-										<span style={{ color: "#263228" }}>{news.date}</span>
-									</div>
 								</div>
 							</div>
 						))}
@@ -123,6 +141,10 @@ const TopNews = () => {
 										className="w-20 h-20 object-cover rounded-md flex-shrink-0 bg-gray-200 transition duration-300 group-hover:brightness-110 group-hover:shadow-lg group-hover:scale-105"
 									/>
 									<div className="flex-1 min-w-0">
+										<div className="flex items-center mb-2">
+											<Badge type="latest">LATEST</Badge>
+											<span className="text-xs text-gray-500">{story.date}</span>
+										</div>
 										<div
 											className={
 												"text-md font-bold mb-2 transition-colors duration-150 group-hover:text-[#2E3CB0]" +
@@ -131,13 +153,6 @@ const TopNews = () => {
 											style={{ fontFamily: "'Lato', 'Arial', sans-serif" }}
 										>
 											{story.title}
-										</div>
-										<div
-											className="flex items-center gap-3 text-xs mt-auto transition-colors duration-150 group-hover:text-[#2E3CB0]"
-											style={{ fontFamily: "'Lato', 'Arial', sans-serif" }}
-										>
-											<span className="font-semibold tracking-wide">LATEST NEWS</span>
-											<span>{story.date}</span>
 										</div>
 									</div>
 								</div>

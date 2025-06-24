@@ -4,9 +4,10 @@ import TopBar from "../components/Header";
 import TopHeader from "../pages/TopHeader";
 import MainNavigation from "../components/MainNavigation";
 import BreakingNews from "../components/BreakingNewsTicker";
-import AddSection from "../pages/Add";
 import TopNews from "../pages/TopNews";
+import MiddleNewsSection from "../pages/MiddleNewsSecton";
 import React, { useEffect, useState } from "react";
+
 
 const JumpToTopButton = () => {
   const [show, setShow] = useState(false);
@@ -40,6 +41,7 @@ const Index = () => {
       <MainNavigation />
       <BreakingNews/>
       <TopNews/>
+      <MiddleNewsSection />
     </main>
   );
 };
