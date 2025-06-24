@@ -104,7 +104,7 @@ const TopNews = () => {
 					<AdvertisementPage />
 					{/* Top Stories Section */}
 					<div className="bg-white rounded-lg shadow-lg p-0 overflow-hidden">
-						<div className="text-center text-lg font-bold py-3 border-b border-[#2E3CB0]" style={{ fontFamily: "'Lato', 'Arial', sans-serif", color: '#2F3137' }}>
+						<div className="text-center text-xl font-bold py-3 border-b border-[#2E3CB0]" style={{ fontFamily: "'Lato', 'Arial', sans-serif", color: '#2F3137' }}>
 							<span className="">Top Stories</span>
 						</div>
 						<div className="divide-y divide-gray-200">

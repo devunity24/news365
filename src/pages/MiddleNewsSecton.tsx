@@ -2,6 +2,7 @@ import React from "react";
 import LatestNews from "./LatestNews";
 import NationalNews from "./National";
 import InternationalNews from "./International";
+import BodhiTree from "./BodhiTree";
 
 const MiddleNewsSection = () => {
   return (
@@ -16,10 +17,9 @@ const MiddleNewsSection = () => {
           <NationalNews />
           <InternationalNews />
         </div>
-        {/* Right section placeholder */}
-        {/* <div className="w-full lg:basis-[25%] lg:max-w-[25%] min-w-0">
-          // ...add your right section content here...
-        </div> */}
+        <div className="w-full lg:basis-[25%] lg:max-w-[40%] min-w-0">
+          <BodhiTree />
+        </div>
       </div>
     </section>
   );

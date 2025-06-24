@@ -46,7 +46,7 @@ const National = () => {
       <div className="">
         <div className="rounded-lg shadow-lg p-0 overflow-hidden bg-white">
           <div
-            className="text-center text-lg font-bold py-3 border-b border-[#2E3CB0]"
+            className="text-center text-xl font-bold py-3 border-b border-[#2E3CB0]"
             style={{
               fontFamily: "'Lato', 'Arial', sans-serif",
               color: "#2F3137",
