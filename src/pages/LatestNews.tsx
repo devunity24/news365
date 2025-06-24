@@ -38,11 +38,33 @@ const nationalNews = [
     description: "",
   },
   {
+    title: "India Set to Outpace G7 Economies in Growth: Report",
+    date: "June 23, 2025",
+    image: "../images/top_news_2.jpg",
+    featured: true,
+    description: "",
+  },
+  {
     title:
-      "India Set to Outpace G7 Economies in Growth: Report",
+      "India’s Business Activity Hits 14-Month High in June, Driven by Robust Demand and Exports",
+    date: "June 23, 2025",
+    image: "../images/top_news_1.avif",
+    featured: false,
+    description: "",
+  },
+  {
+    title: "India Set to Outpace G7 Economies in Growth: Report",
     date: "June 23, 2025",
     image: "../images/top_news_2.jpg",
     featured: false,
+    description: "",
+  },
+  {
+    title:
+      "India’s Business Activity Hits 14-Month High in June, Driven by Robust Demand and Exports",
+    date: "June 23, 2025",
+    image: "../images/top_news_1.avif",
+    featured: true,
     description: "",
   },
 ];
@@ -176,7 +198,9 @@ const NationalNewsSection = () => {
                   >
                     {news.title}
                   </div>
-                  <div className="text-xs text-gray-600">{news.description}</div>
+                  <div className="text-xs text-gray-600">
+                    {news.description}
+                  </div>
                 </div>
               </div>
             ))}

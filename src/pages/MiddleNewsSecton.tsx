@@ -1,7 +1,7 @@
 import React from "react";
 import LatestNews from "./LatestNews";
 import NationalNews from "./National";
-import InternationalNews from "./";
+import InternationalNews from "./International";
 
 const MiddleNewsSection = () => {
   return (
