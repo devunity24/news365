@@ -44,7 +44,7 @@ const PSU = () => {
                 </div>
                 {/* News Card */}
                 <div className="p-6">
-                    <h2 className="text-2xl font-bold mb-2 leading-tight" style={{ fontFamily: "'Lato', 'Arial', sans-serif", color: "#2F3137"}}>
+                    <h2 className="text-xl font-bold mb-2 leading-tight" style={{ fontFamily: "'Lato', 'Arial', sans-serif", color: "#2F3137"}}>
                         Office of the Principal Scientific Adviser to the Government of India Releases Inaugural Edition of India’s International Technology Engagement Strategy (ITES) for Quantum Technologies
                     </h2>
                     <div className="flex items-center gap-3 text-sm mb-4">

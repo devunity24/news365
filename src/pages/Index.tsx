@@ -11,6 +11,7 @@ import NewsByState from "./NewByState";
 import VideoCarousel from "@/components/VideoCarousel";
 import NewsByMetro from "./NewsByMetro";
 import PSUAndBlog from "./PSUAndBlog";
+import PoliticsAndBusiness from "./PoliticsAndBusiness";
 
 
 const JumpToTopButton = () => {
@@ -50,6 +51,7 @@ const Index = () => {
       <VideoCarousel />
       <NewsByMetro />
       <PSUAndBlog />
+      <PoliticsAndBusiness />
     </main>
   );
 };

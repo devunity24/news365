@@ -53,7 +53,7 @@ const VideoCarousel = () => {
   };
 
   return (
-    <section id="videos" className="rounded-lg shadow-lg pl-6 pr-6 pb-6 bg-blue-50 max-w-screen-2xl mx-auto bg-gradient-to-b from-blue-200 to-blue-50 mt-4">
+    <section id="videos" className="rounded-lg shadow-lg pl-6 pr-6 pb-6 bg-blue-50 max-w-screen-2xl mx-auto bg-gradient-to-b from-blue-100 to-blue-50 mt-4">
       <div className="max-w-screen-2xl mx-auto">
         <div
           className="text-center text-xl font-bold py-3 border-b border-[#2E3CB0] mb-6"
