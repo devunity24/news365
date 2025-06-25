@@ -9,7 +9,7 @@ const bodhiNews = [
         badge: "THE BODHI TREE",
     },
     {
-        title: "FINITE TO INFINITE (Zero to Empty to Shunya)",
+        title: "Unlock Zero Energy: A Journey Into Consciousness and Cosmic Intelligence",
         date: "June 22, 2025",
         image: "../images/bodhi_tree_2.jpeg",
         badge: "THE BODHI TREE",
@@ -48,7 +48,7 @@ const BodhiTree = () => {
                     {bodhiNews.map((news, idx) => (
                         <div
                             key={idx}
-                            className="rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-200 p-0 overflow-hidden flex flex-col border border-gray-100"
+                            className="rounded-xl bg-white shadow-md hover:shadow-xl transition-all duration-200 p-0 overflow-hidden flex flex-col border border-gray-100 group hover:border-[#2E3CB0] group-hover:border-[#2E3CB0]"
                         >
                             <img
                                 src={news.image}
@@ -57,7 +57,7 @@ const BodhiTree = () => {
                             />
                             <div className="p-4 flex flex-col flex-1">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-blue-100 text-bule-700 text-xs font-semibold">            
+                                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold">            
                                         {news.badge}
                                     </span>
                                     <span className="text-xs text-gray-500">
@@ -65,7 +65,7 @@ const BodhiTree = () => {
                                     </span>
                                 </div>
                                 <h3
-                                    className="text-md font-bold leading-snug text-[#263228]"
+                                    className="text-md font-bold leading-snug text-[#263228] transition-colors duration-150 group-hover:text-[#2E3CB0]"
                                     style={{
                                         fontFamily: "'Lato', 'Arial', sans-serif",
                                     }}

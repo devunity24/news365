@@ -6,6 +6,9 @@ import MainNavigation from "../components/MainNavigation";
 import BreakingNews from "../components/BreakingNewsTicker";
 import TopNews from "../pages/TopNews";
 import MiddleNewsSection from "../pages/MiddleNewsSecton";
+import NewsByState from "./NewByState";
+import VideoCarousel from "@/components/VideoCarousel";
+import NewsByMetro from "./NewsByMetro";
 import React, { useEffect, useState } from "react";
 
 
@@ -42,6 +45,9 @@ const Index = () => {
       <BreakingNews/>
       <TopNews/>
       <MiddleNewsSection />
+      <NewsByState />
+      <VideoCarousel />
+      <NewsByMetro />
     </main>
   );
 };
