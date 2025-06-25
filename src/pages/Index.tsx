@@ -1,4 +1,5 @@
 // Rashtrashabdam News Portal Homepage Layout
+import React, { useEffect, useState } from "react";
 
 import TopBar from "../components/Header";
 import TopHeader from "../pages/TopHeader";
@@ -9,7 +10,7 @@ import MiddleNewsSection from "../pages/MiddleNewsSecton";
 import NewsByState from "./NewByState";
 import VideoCarousel from "@/components/VideoCarousel";
 import NewsByMetro from "./NewsByMetro";
-import React, { useEffect, useState } from "react";
+import PSUAndBlog from "./PSUAndBlog";
 
 
 const JumpToTopButton = () => {
@@ -48,6 +49,7 @@ const Index = () => {
       <NewsByState />
       <VideoCarousel />
       <NewsByMetro />
+      <PSUAndBlog />
     </main>
   );
 };
