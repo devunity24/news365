@@ -38,15 +38,7 @@ const politicsNews = [
     description:
       "Though the alliance has not made any progress on striking a deal for the Lok Sabha polls, SP and Congress are reportedly in talks for an agreement on the Madhya Pradesh elections",
   },
-  {
-    title: "Indian opposition parties form ‘INDIA’ alliance for 2024 election",
-    date: "June 23, 2025",
-    image: "../images/politics_5.webp",
-    badge: "LATEST",
-    badgeType: "latest",
-    description:
-      "INDIA stands for ‘Indian National Developmental Inclusive Alliance’, says an opposition leader at the end of a two-day meeting in Bengaluru.",
-  },
+  
 ];
 
 const Badge = ({
@@ -136,6 +128,7 @@ const Politics = () => {
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center mb-2">
                     <Badge type="latest">LATEST</Badge>
+                    <span className="pl-4"></span>
                     <span className="text-xs text-gray-500">{news.date}</span>
                   </div>
                   <div

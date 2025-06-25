@@ -3,7 +3,7 @@ import { Star, Flame } from "lucide-react";
 
 const politicsNews = [
   {
-    title: "In Delhi’s political win, BJP gets a governance gift",
+    title: "The BJP is politically comfortable, and it has a seven-month window to get its economic governance right before the political cycle heats up all the way.",
     date: "June 25, 2025",
     image: "../images/politics_1.jpg",
     badge: "LATEST",
@@ -12,7 +12,7 @@ const politicsNews = [
       "The BJP is politically comfortable, and it has a seven-month window to get its economic governance right before the political cycle heats up all the way to 2029.",
   },
   {
-    title: "Congress announces new alliance strategy for 2025 elections",
+    title: "Congress party leaders unveiled a new alliance roadmap, aiming to strengthen their position in the upcoming state and national elections",
     date: "June 24, 2025",
     image: "../images/politics_2.jpg",
     badge: "FEATURED",
@@ -22,32 +22,22 @@ const politicsNews = [
   },
   {
     title:
-      "SP-Congress deal sealed in UP: What next for INDIA bloc as clock ticks down to Lok Sabha elections 2024",
+      "Reliance Infra shares hit 5% upper circuit after subsidiary wins Rs 600-crore order from German defence firm",
     date: "June 23, 2025",
-    image: "../images/politics_3.avif",
+    image: "../images/business_1.avif",
     badge: "LATEST",
     badgeType: "latest",
     description:
-      "SP-Congress deal sealed in UP: What next for INDIA bloc as clock ticks down to Lok Sabha elections 2024 The SP-Congress formula announced on February 21 is the first seat-sharing agreement of ...",
+      "The shares of Reliance Infrastructure jumped 5 percent to get locked in the upper circuit on June 25 after...",
   },
   {
-    title:
-      "INDIA parties sluggish on seat sharing: A month on, the needle moves but barely",
+    title: "Adani Total Gas, Jio-bp tie up to offer petrol, diesel, CNG at fuel outlets",
     date: "June 23, 2025",
-    image: "../images/politics_4.jpg",
+    image: "../images/business_2.avif",
     badge: "LATEST",
     badgeType: "latest",
     description:
-      "Though the alliance has not made any progress on striking a deal for the Lok Sabha polls, SP and Congress are reportedly in talks for an agreement on the Madhya Pradesh elections",
-  },
-  {
-    title: "Indian opposition parties form ‘INDIA’ alliance for 2024 election",
-    date: "June 23, 2025",
-    image: "../images/politics_5.webp",
-    badge: "LATEST",
-    badgeType: "latest",
-    description:
-      "INDIA stands for ‘Indian National Developmental Inclusive Alliance’, says an opposition leader at the end of a two-day meeting in Bengaluru.",
+      "Adani Total Gas Ltd (ATGL) and Jio-bp have entered a strategic partnership to jointly retail their respective fuels across select outlets, marking a...",
   },
 ];
 
@@ -92,7 +82,7 @@ const Business = () => {
 
         {/* Remaining news: horizontal compact card layout */}
         <div className="px-2 flex flex-col gap-4 divide-y divide-gray-200">
-          {politicsNews.slice(0, 3).map((news, idx) => (
+          {politicsNews.slice(0, 2).map((news, idx) => (
             <div
               key={news.title}
               className="pt-4 pl-4 pr-4 flex items-start gap-4 group cursor-pointer transition-all duration-200 rounded-lg hover:bg-gray-50"
@@ -105,6 +95,7 @@ const Business = () => {
               <div className="flex-1 min-w-0">
                 <div className="flex items-center mb-2">
                   <Badge type="latest">LATEST</Badge>
+                  <span className="pl-4"></span>
                   <span className="text-xs text-gray-500">{news.date}</span>
                 </div>
                 <div
@@ -122,7 +113,7 @@ const Business = () => {
         {/* News Cards */}
         <div className="pl-6 pr-6 pt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* First 2 news: card layout */}
-          {politicsNews.slice(3).map((news, idx) => (
+          {politicsNews.slice(2).map((news, idx) => (
             <div
               key={idx}
               className="bg-white rounded-lg overflow-hidden shadow-lg mb-4 border border-gray-200 transition-all duration-200 hover:shadow-2xl hover:border-[#2e3cb0] group cursor-pointer"
