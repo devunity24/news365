@@ -15,6 +15,7 @@ import PoliticsAndBusiness from "./PoliticsAndBusiness";
 import Sports from "./Sports";
 import TravelAndTourisam from "./TravelAndTourisam";
 import Entertainment from "./Entertainment";
+import Footer from "../components/Footer";
 
 
 const JumpToTopButton = () => {
@@ -58,6 +59,8 @@ const Index = () => {
       <Sports />
       <TravelAndTourisam />
       <Entertainment />
+      <Footer />
+      {/* Jump to top button */}
       <JumpToTopButton />
     </main>
   );

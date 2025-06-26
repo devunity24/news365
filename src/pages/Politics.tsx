@@ -114,11 +114,11 @@ const Politics = () => {
           ))}
         </div>
         {/* Remaining news: horizontal compact card layout */}
-        <div className="px-2 flex flex-col gap-4 divide-y divide-gray-200">
+        <div className="px-2 flex flex-col divide-y divide-gray-200">
          {politicsNews.slice(2).map((news, idx) => (
               <div
                 key={news.title}
-                className="pt-4 pl-4 pr-4 flex items-start gap-4 group cursor-pointer transition-all duration-200 rounded-lg hover:bg-gray-50"
+                className="pt-4 pl-4 pr-4 pb-4 flex items-start gap-4 group cursor-pointer transition-all duration-200 rounded-lg hover:bg-gray-50"
               >
                 <img
                   src={news.image}
