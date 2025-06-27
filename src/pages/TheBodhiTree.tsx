@@ -1,0 +1,293 @@
+import React from "react";
+import TopHeader from "./TopHeader";
+import Header from "../components/Header";
+import MainNavigation from "../components/MainNavigation";
+import { Star, Flame } from "lucide-react";
+import Footer from "../components/Footer";
+
+const bodhiArticles = [
+	{
+		title: "Reverse Flow with Hurt: From Turbulence to Triumph",
+		image: "../images/bt_1.png",
+		description:
+			"A journey of healing and transformation, turning pain into power through mindful awareness.",
+		date: "June 27, 2025",
+		badge: "FEATURED",
+		badgeType: "featured",
+	},
+	{
+		title:
+			"The Houseline, Ho, Haku, Haat Hubris 5S: A Sacred Mandala of Modern Feminine Force External Hold",
+		image: "../images/bt_2.png",
+		description:
+			"Exploring the sacred geometry and symbolism of the modern feminine through art and story.",
+		date: "June 27, 2025",
+		badge: "LATEST",
+		badgeType: "latest",
+	},
+	{
+		title:
+			"Flow in the Brain, Vessels, and Viscera: A Creative Symphony of Healing and Harmony",
+		image: "../images/bt_3.png",
+		description:
+			"How creative flow states can harmonize the mind, body, and spirit for holistic healing.",
+		date: "June 27, 2025",
+		badge: "LATEST",
+		badgeType: "latest",
+	},
+	{
+		title:
+			"ENERGY FULL DAY: From Root to Vissh, the Invisible Symphony of Life",
+		image: "../images/bt_4.png",
+		description:
+			"Discover the subtle energies that power our daily lives and how to harness them for well-being.",
+		date: "June 27, 2025",
+		badge: "FEATURED",
+		badgeType: "featured",
+	},
+	{
+		title: "SOUL + DRUM = BEAT",
+		image: "../images/bt_5.png",
+		description:
+			"The ancient rhythm of the drum as a tool for soul connection and personal transformation.",
+		date: "June 27, 2025",
+		badge: "LATEST",
+		badgeType: "latest",
+	},
+	{
+		title:
+			"Co-Echo Dynamics: Rewiring Karma Through Neuroscience and Symbolic Thought",
+		image: "../images/bt_6.png",
+		description:
+			"How modern neuroscience and ancient wisdom intersect to help us break karmic cycles.",
+		date: "June 27, 2025",
+		badge: "LATEST",
+		badgeType: "latest",
+	},
+	{
+		title: "FINITE TO INFINITE (Zero to Empty to Shunya)",
+		image: "../images/bt_8.png",
+		description:
+			"A visual meditation on the journey from limitation to boundless possibility.",
+		date: "June 27, 2025",
+		badge: "LATEST",
+		badgeType: "latest",
+	},
+	{
+		title: "The Grounded Flower: A Silent Philosophy of Healing Through Art",
+		image: "../images/bt_10.png",
+		description: "Art as a silent teacher—how creativity grounds and heals us.",
+		date: "June 27, 2025",
+		badge: "FEATURED",
+		badgeType: "featured",
+	},
+	{
+		title: "How Patriarchy Persists Through Every Crack",
+		image: "../images/bt_7.png",
+		description:
+			"Examining the subtle ways patriarchal patterns persist and how to break free.",
+		date: "June 27, 2025",
+		badge: "FEATURED",
+		badgeType: "featured",
+	},
+];
+
+const Badge = ({
+	type,
+	children,
+}: {
+	type: "featured" | "latest";
+	children: React.ReactNode;
+}) => {
+	if (type === "featured") {
+		return (
+			<span
+				className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#fff8e1] text-[#b8860b] text-xs font-bold uppercase"
+				style={{ fontFamily: "'Lato', 'Arial', sans-serif" }}
+			>
+				<Star size={14} className="text-[#b8860b]" /> {children}
+			</span>
+		);
+	}
+	return (
+		<span
+			className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#fde7e7] text-[#c94b43] text-xs font-bold uppercase"
+			style={{ fontFamily: "'Lato', 'Arial', sans-serif" }}
+		>
+			<Flame size={14} className="text-[#c94b43]" /> {children}
+		</span>
+	);
+};
+
+const TheBodhiTree = () => {
+	return (
+		<>
+			<TopHeader />
+			<Header />
+			<MainNavigation />
+			<div className="w-full bg-gradient-to-r from-[#e0e7ef] to-[#f8fafc] py-6 mb-2 border-b border-gray-200">
+				<div className="max-w-3xl mx-auto px-2 flex flex-col items-center">
+					<h1
+						className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#2e3cb0] text-center"
+						style={{
+							fontFamily: "'Lora', 'Merriweather', serif",
+							letterSpacing: "0.02em",
+							lineHeight: 1.1,
+						}}
+					>
+						<span className="inline-block bg-white px-3 py-1 rounded shadow-sm">
+							The Bodhi Tree
+						</span>
+					</h1>
+					<p
+						className="mt-2 text-base md:text-lg text-gray-600 text-center max-w-xl"
+						style={{ fontFamily: "'Lato', 'Arial', sans-serif" }}
+					>
+						Mindful living, healing, and creative exploration for your journey.
+					</p>
+				</div>
+			</div>
+			<section className="bg-[#f8fafc] min-h-screen py-6 pl-4">
+				<div className="max-w-screen-2xl mx-auto flex flex-col lg:flex-row gap-8">
+					{/* Main Articles Grid */}
+					<div className="w-full lg:w-[70%]">
+						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+							{bodhiArticles.map((article, idx) => (
+								<div
+									key={idx}
+									className="rounded-2xl bg-white shadow hover:shadow-lg transition-all duration-200 overflow-hidden flex flex-col border border-gray-100 group"
+									style={{ minHeight: 370 }}
+								>
+									<div className="overflow-hidden">
+										<img
+											src={article.image}
+											alt={article.title}
+											className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105 group-hover:brightness-95"
+											style={{ objectPosition: "center" }}
+										/>
+									</div>
+									<div className="p-4 flex flex-col flex-1">
+										<div className="flex items-center gap-2 mb-2">
+											<Badge
+												type={
+													article.badgeType as "featured" | "latest" | "psu"
+												}
+											>
+												{article.badge}
+											</Badge>
+											<span className="text-xs text-gray-500">
+												{article.date}
+											</span>
+										</div>
+										<div
+											className="font-bold text-lg mb-1 text-[#222] leading-snug transition-colors group-hover:text-[#2e3cb0]"
+											style={{
+												fontFamily: "'Lato', 'Arial', sans-serif",
+											}}
+										>
+											{article.title}
+										</div>
+										<div
+											className="text-sm text-gray-600 mt-1"
+											style={{
+												fontFamily: "'Lato', 'Arial', sans-serif",
+											}}
+										>
+											{article.description}
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+					{/* Sidebar */}
+					<aside className="w-full lg:w-[30%] flex-shrink-0 flex flex-col gap-6">
+						<div className="bg-white rounded-xl shadow-md p-4">
+							<div className="font-bold text-base mb-2 text-[#2F3137]">
+								Recent Articles
+							</div>
+							<ul className="space-y-3">
+								{bodhiArticles.slice(0, 5).map((article, idx) => (
+									<li key={idx}>
+										<a
+											href="#"
+											className="flex items-start gap-3 rounded-lg border border-gray-100 bg-white shadow-sm px-2 py-2 hover:shadow-md transition group"
+											style={{ textDecoration: "none" }}
+										>
+											<img
+												src={article.image}
+												alt={article.title}
+												className="w-14 h-14 object-cover rounded-md flex-shrink-0 border border-gray-200"
+											/>
+											<div className="flex flex-col flex-1 min-w-0">
+												<div className="flex items-center gap-2 mb-1">
+													<Badge
+														type={
+															article.badgeType as "featured" | "latest" | "psu"
+														}
+													>
+														{article.badge}
+													</Badge>
+													<span className="text-xs text-gray-400">
+														{article.date}
+													</span>
+												</div>
+												<div
+													className="font-bold text-[15px] text-black leading-snug group-hover:text-[#2e3cb0] transition-colors line-clamp-2"
+													style={{
+														fontFamily: "'Lato', 'Arial', sans-serif",
+													}}
+												>
+													{article.title}
+												</div>
+												<div
+													className="text-xs text-gray-600 mt-1 line-clamp-2"
+													style={{
+														fontFamily: "'Lato', 'Arial', sans-serif",
+													}}
+												>
+													{article.description}
+												</div>
+											</div>
+										</a>
+									</li>
+								))}
+							</ul>
+						</div>
+						<div className="bg-gradient-to-br from-[#e0e7ef] to-[#f8fafc] rounded-xl shadow-md p-4 flex flex-col items-center">
+							<div className="font-bold text-base mb-2 text-[#2F3137]">
+								Advertise With Us
+							</div>
+							<img
+								src="../images/advertise.png"
+								alt="Advertise"
+								className="w-32 h-20 object-contain mb-2"
+							/>
+							<button className="px-4 py-2 bg-[#2e3cb0] text-white rounded font-semibold hover:bg-[#1c2566] transition">
+								Contact Us
+							</button>
+						</div>
+						<div className="bg-white rounded-xl shadow-md p-4">
+							<div className="font-bold text-base mb-2 text-[#2F3137]">
+								About The Bodhi Tree
+							</div>
+							<div
+								className="text-sm text-gray-700"
+								style={{
+									fontFamily: "'Lato', 'Arial', sans-serif",
+								}}
+							>
+								The Bodhi Tree is a space for mindful living, healing, and
+								creative exploration. Discover articles, art, and insights for
+								your journey.
+							</div>
+						</div>
+					</aside>
+				</div>
+			</section>
+			<Footer />
+		</>
+	);
+};
+
+export default TheBodhiTree;

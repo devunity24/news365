@@ -9,6 +9,7 @@ import NewsDetails from "./pages/NewsDetail";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import JoinUS from "./pages/JoinUs";
+import TheBodhiTree from "./pages/TheBodhiTree";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/join-us" element={<JoinUS />} />
+          <Route path="/the-bodhi-tree" element={<TheBodhiTree />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
