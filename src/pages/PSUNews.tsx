@@ -207,7 +207,7 @@ const PSUNews = () => {
 								Recent Articles
 							</div>
 							<ul className="space-y-3">
-								{bodhiArticles.slice(0, 5).map((article, idx) => (
+								{bodhiArticles.slice(0, 6).map((article, idx) => (
 									<li key={idx}>
 										<a
 											href="#"
