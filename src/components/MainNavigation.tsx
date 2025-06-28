@@ -63,7 +63,7 @@ const MainNavigation = ({ fromTopBar }: MainNavigationProps) => {
             className={
               "flex items-center gap-2 px-4 py-1 font-medium rounded transition-colors whitespace-nowrap hover:bg-[#2e353b] hover:text-white" +
               (menu.title === "Home" ? " font-bold" : "") +
-              (fromTopBar ? " hover:bg-gray-100 hover:text-black text-black" : " text-white")
+              (fromTopBar ? "  hover:text-black text-black" : " text-white")
             }
             style={{
               background: menu.title === "Home" ? "transparent" : undefined,

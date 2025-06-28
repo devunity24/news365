@@ -16,6 +16,7 @@ import Sports from "./Sports";
 import TravelAndTourisam from "./TravelAndTourisam";
 import Entertainment from "./Entertainment";
 import Footer from "../components/Footer";
+import StayTuned from "./StayTuned";
 
 
 const JumpToTopButton = () => {

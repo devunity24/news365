@@ -2,8 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { Search, Facebook, Instagram, Linkedin, Youtube, Globe, Rss, X as XIcon } from "lucide-react";
 import { format } from 'date-fns';
 import { Input } from "@/components/ui/input";
-import SmallNewsCard from "./SmallNewsCard";
 import MainNavigation from "./MainNavigation"; // Import MainNavigation
+import { Star, Flame } from "lucide-react";
 
 // Example news data for dropdown
 const mockNews = [
@@ -11,52 +11,85 @@ const mockNews = [
     id: 1,
     image: "../images/banner1.avif",
     category: "Malayalam",
-    headline: "ടാറ്റാ ഐപിഎൽ 2025 ഫൈനൽ, ആർസിബി vs പഞ്ചാബ് കിംഗ്സ് ",
+    headline: "Tata IPL 2025 Final: RCB vs Punjab Kings",
     language: "malayalam" as const,
     publishedAt: "2024-06-10",
+    featured: false,
   },
   {
     id: 2,
     image: "../images/top_news_1.jpg",
     category: "Kannada",
-    headline: "ಬೆಂಗಳೂರು ಮೆಟ್ರೋ ಐಟಿ ಹಬ್‌ಗಳನ್ನು ಸಂಪರ್ಕಿಸುವ ಹೊಸ ಮಾರ್ಗವನ್ನು ಆರಂಭಿಸಿದೆ",
+    headline: "Bengaluru Metro launches new route connecting IT hubs",
     language: "kannada" as const,
     publishedAt: "2024-06-09",
+    featured: true,
   },
   {
     id: 3,
     image: "../images/top_news_2.jpg",
     category: "Tamil",
-    headline: "வெப்ப அலை காரணமாக சென்னையில் கடும் நீர் பஞ்சம்",
+    headline: "Heatwave causes severe water shortage in Chennai",
     language: "tamil" as const,
     publishedAt: "2024-06-08",
+    featured: false,
   },
   {
     id: 4,
     image: "../images/top_news_3.jpg",
     category: "Telugu",
-    headline: "Kavitha: కేసీఆర్‌తో మాట్లాడానో.. లేదన్నది ఇప్పుడు అనవసరం",
+    headline: "Kavitha: Whether I spoke to KCR or not is irrelevant now",
     language: "telugu" as const,
     publishedAt: "2024-06-07",
+    featured: false,
   },
   {
     id: 5,
     image: "../images/top_news_4.jpg",
     category: "Kannada",
-    headline: "ನಟ ಕಮಲ್ ಹಾಸನ್ ಇನ್ನೂ ಕ್ಷಮೆ ಕೇಳಿಲ್ವಾ ? ಹೈಕೋರ್ಟ್ ಪ್ರಶ್ನೆ : ಅರ್ಜಿ ವಿಚಾರಣೆ ಮುಂದೂಡಿಕೆ",
+    headline: "Actor Kamal Haasan yet to apologize? High Court questions: Petition hearing postponed",
     language: "kannada" as const,
     publishedAt: "2024-06-07",
+    featured: true,
   },
   {
     id: 6,
-    image: "../images/top_news_6.jpg",
+    image: "../images/latest_news_3.jpg",
     category: "Tamil",
-    headline: "ஒரே பாடலில் முதலமைச்சர் ஆக முடியாது விஜய்!'",
+    headline: "You can't become Chief Minister with just one song, Vijay!",
     language: "tamil" as const,
     publishedAt: "2024-06-08",
+    featured: true,
   },
   // ...add more as needed
 ];
+
+const Badge = ({
+  type,
+  children,
+}: {
+  type: "featured" | "latest";
+  children: React.ReactNode;
+}) => {
+  if (type === "featured") {
+    return (
+      <span
+        className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#fff8e1] text-[#b8860b] text-xs font-bold uppercase"
+        style={{ fontFamily: "'Lato', 'Arial', sans-serif" }}
+      >
+        <Star size={14} className="text-[#b8860b]" /> {children}
+      </span>
+    );
+  }
+  return (
+    <span
+      className="inline-flex items-center gap-1 px-2 py-0.5 rounded bg-[#fde7e7] text-[#c94b43] text-xs font-bold uppercase"
+      style={{ fontFamily: "'Lato', 'Arial', sans-serif" }}
+    >
+      <Flame size={14} className="text-[#c94b43]" /> {children}
+    </span>
+  );
+};
 
 const TopBar = () => {
   const currentDate = format(new Date(), 'eeee, MMMM do, yyyy');
@@ -93,7 +126,7 @@ const TopBar = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-sm mb-2 pt-1">
+    <header className="sticky top-0 z-30 bg-white shadow-sm mb-2 pt-1">
       <nav className={
         `max-w-screen-2xl mx-auto flex items-center justify-between gap-4 md:gap-6 px-4 md:px-8 relative transition-all duration-200 ${scrolled ? 'py-4' : 'py-2'}`
       }>
@@ -152,7 +185,7 @@ const TopBar = () => {
                 {showDropdown && (
                   <div
                     ref={dropdownRef}
-                    className="fixed left-1/2 top-20 sm:absolute sm:left-0 sm:top-11 sm:left-auto sm:-translate-x-[78%] w-full sm:w-[1120px] max-w-full sm:max-w-[99vw] bg-white border border-gray-200 rounded-xl shadow-2xl z-9999 overflow-visible px-1 sm:px-0"
+                    className="fixed left-1/2 top-20 sm:absolute sm:left-0 sm:top-11 sm:left-auto sm:-translate-x-[78%] w-full sm:w-[1120px] max-w-full sm:max-w-[99vw] bg-white border border-gray-200 rounded-xl shadow-2xl z-[99999] overflow-visible px-1 sm:px-0"
                     style={{ minWidth: 0 }}
                   >
                     <div className="flex flex-col md:flex-row">
@@ -182,11 +215,11 @@ const TopBar = () => {
                                   />
                                   <div className="flex flex-col justify-between h-full">
                                     <div className="flex items-center gap-2 mb-1">
-                                      <span
-                                        className={`px-2 py-0.5 rounded-full text-xs font-semibold capitalize ${langColor[news.language] || "bg-gray-100 text-gray-700"}`}
-                                      >
-                                        {news.language}
-                                      </span>
+                                      {news.featured ? (
+                                        <Badge type="featured">FEATURED</Badge>
+                                      ) : (
+                                        <Badge type="latest">LATEST</Badge>
+                                      )}
                                     </div>
                                     <div className="font-semibold text-[15px] text-gray-900 leading-tight line-clamp-2">{news.headline}</div>
                                     <div className="text-xs text-gray-500 mt-1">{news.publishedAt}</div>
@@ -206,44 +239,7 @@ const TopBar = () => {
                         </button>
                       </div>
                       {/* Right: Categories & Tags */}
-                      <div className="w-full sm:w-56 min-w-0 sm:min-w-[180px] border-t sm:border-t-0 sm:border-l border-gray-100 px-2 py-4 sm:px-5 sm:py-5 flex flex-col gap-6 bg-blue-50">
-                        <div className="rounded-lg">
-                          <div className="text-[#e4572e] font-bold text-base mb-2 text-left">Regional News</div>
-                          <div className="flex flex-wrap sm:flex-col gap-2">
-                            {["Malayalam", "Tamil", "Telugu", "Kannada", "Hindi"].map(region => (
-                              <button
-                                key={region}
-                                type="button"
-                                className="bg-white border border-gray-200 rounded px-2 py-1 text-sm flex items-center gap-2 hover:bg-blue-100 hover:border-blue-400 transition-colors text-left"
-                                // onClick={() => { /* handle region click */ }}
-                              >
-                                {region}
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-                        <div>
-                          <div className="text-[#e4572e] font-bold text-base mb-2 text-left">Tags</div>
-                          <div className="flex flex-wrap gap-2">
-                            { [
-                              
-                              "#Latest News",
-                              "#Breaking",
-                              "#South India",
-                              "#Trending",
-                            ].map(tag => (
-                              <button
-                                key={tag}
-                                type="button"
-                                className="bg-white border border-gray-200 rounded px-2 py-1 text-xs text-gray-800 hover:bg-blue-100 hover:border-blue-400 transition-colors"
-                                // onClick={() => { /* handle tag click */ }}
-                              >
-                                {tag}
-                              </button>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
+                      
                     </div>
                   </div>
                 )}
