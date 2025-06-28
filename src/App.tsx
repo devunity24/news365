@@ -10,6 +10,7 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import JoinUS from "./pages/JoinUs";
 import TheBodhiTree from "./pages/TheBodhiTree";
+import PSUNews from "./pages/PSUNews";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/join-us" element={<JoinUS />} />
           <Route path="/the-bodhi-tree" element={<TheBodhiTree />} />
+          <Route path="/psu-news-365" element={<PSUNews />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
