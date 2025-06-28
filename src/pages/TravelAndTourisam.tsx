@@ -3,50 +3,46 @@ import { Star, Flame } from "lucide-react";
 
 const stateNews = [
 	{
-		image: "../images/top_news_1.avif",
-		badge: "LATEST",
-		date: "June 23, 2025",
+		image: "../images/travel.jpeg",
+		badge: "TRAVEL AND TOURISM",
+		date: "June 20, 2025",
 		featured: true,
-		title:
-			"India’s Business Activity Hits 14-Month High in June, Driven by Robust Demand and Exports",
+		title: "Most and Least Liveable Cities 2025: A Tale of Two Worlds",
 	},
 	{
-		image: "../images/top_news_2.jpg",
-		badge: "LATEST",
-		date: "June 23, 2025",
+		image: "../images/travel_2.png",
+		badge: "TRAVEL AND TOURISM",
+		date: "March 20, 2025",
 		featured: false,
-		title: "India Set to Outpace G7 Economies in Growth: Report",
+		title: "A New Immersive and Interactive Images of Singapore Experience at Madame Tussauds Singapore",
 	},
 	{
-		image: "../images/top_news_3.webp",
-		badge: "LATEST",
-		date: "June 23, 2025",
+		image: "../images/travel_3.jpg",
+		badge: "TRAVEL AND TOURISM",
+		date: "January 28, 2025",
 		featured: false,
-		title:
-			"Container Liquor Shops Gain Popularity in Noida Amid Policy Shift and Space Crunch",
+		title: "Tourism Malaysia Sales Mission to Hyderabad, Bengaluru & Kochi",
 	},
 	{
-		image: "../images/top_news_4.webp",
-		badge: "LATEST",
-		date: "June 23, 2025",
+		image: "../images/travel_4.jpeg",
+		badge: "TRAVEL AND TOURISM",
+		date: "December 21, 2024",
 		featured: true,
-		title:
-			"Assembly Bypoll Result 2025 Updates: BJP, AAP Win 1 Seat Each In Gujarat, Congress Wins In Kerala",
+		title: "Malaysia Extends Visa Exemption for Indian Nationals Until 2026",
 	},
 	{
-		image: "../images/top_news_5.webp",
-		badge: "LATEST",
-		date: "June 23, 2025",
-		featured: true,
-		title: "Actor Srikanth Sent To Judicial Custody Till July 7 In Drugs Case",
+		image: "../images/travel_5.jpg",
+		badge: "TRAVEL AND TOURISM",
+		date: "December 20, 2024",
+		featured: false,
+		title: "Experience a Unique Hong Kong Chinese New Year",
 	},
 	{
-		image: "../images/top_news_6.png",
-		badge: "LATEST",
-		date: "June 23, 2025",
-		featured: true,
-		title:
-			"Butterfly Unveils a Bold New Identity That Celebrates Change and Champions the Original You",
+		image: "../images/travel_6.jpg",
+		badge: "TRAVEL AND TOURISM",
+		date: "December 7, 2024",
+		featured: false,
+		title: "17 Top Tourist Destinations in Andhra Pradesh",
 	},
 ];
 
@@ -186,5 +182,7 @@ const TravelAndTourisam = () => {
 		</section>
 	);
 };
+
+
 
 export default TravelAndTourisam;
