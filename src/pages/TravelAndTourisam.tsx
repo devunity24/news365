@@ -98,7 +98,7 @@ const TravelAndTourisam = () => {
 								color: "#2F3137",
 							}}
 						>
-							<span>Travel & Tourisam News</span>
+							<span>Travel & Tourism News</span>
 						</div>
 						<div className="flex flex-col gap-4 flex-1 justify-center">
 							{/* First row */}

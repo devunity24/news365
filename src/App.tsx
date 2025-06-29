@@ -11,6 +11,8 @@ import ContactUs from "./pages/ContactUs";
 import JoinUS from "./pages/JoinUs";
 import TheBodhiTree from "./pages/TheBodhiTree";
 import PSUNews from "./pages/PSUNews";
+import Maverick from "./pages/Maverick";
+import Astro from "./pages/Astro";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +32,9 @@ const App = () => (
           <Route path="/join-us" element={<JoinUS />} />
           <Route path="/the-bodhi-tree" element={<TheBodhiTree />} />
           <Route path="/psu-news-365" element={<PSUNews />} />
+          <Route path="/memoirs-of-a-maverick" element={<Maverick />} />
+          <Route path="/astro-vision" element={<Astro />} />
+          {/* Add more routes as needed */}
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
